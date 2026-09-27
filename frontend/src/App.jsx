@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
+import TopNavigation from './components/TopNavigation';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 import TraineeDashboardView from './components/views/TraineeDashboardView';
@@ -20,7 +20,6 @@ import RoleSelectionLanding from './components/views/RoleSelectionLanding';
 function MainLayout() {
   const { user, role, loading } = useAuth();
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const trainerTabs = ['overview', 'enrollments', 'analytics', 'overrides', 'curriculum', 'questionbank', 'assignments', 'discussions', 'ratings', 'cohorts', 'certificates', 'profile', 'trainer'];
   const traineeTabs = ['dashboard', 'goals', 'diagnostic', 'assignments', 'availability', 'roadmap', 'kg', 'lesson', 'certificate'];
@@ -43,11 +42,11 @@ function MainLayout() {
 
   if (loading) {
     return (
-      <div className="h-screen w-screen bg-[#0F172A] text-white flex items-center justify-center p-8">
+      <div className="h-screen w-screen bg-[#EDF2FB] text-[#22223B] flex items-center justify-center p-8">
         <div className="text-center space-y-3">
-          <RefreshCw className="w-10 h-10 animate-spin mx-auto text-[#2563EB]" />
-          <p className="text-sm font-bold tracking-wider uppercase text-white">Initializing Capacity Connect Engine...</p>
-          <p className="text-xs text-slate-400">Verifying institutional RBAC security state</p>
+          <RefreshCw className="w-10 h-10 animate-spin mx-auto text-[#ABC4FF]" />
+          <p className="text-sm font-bold tracking-wider uppercase text-[#22223B]">Initializing Capacity Connect Engine...</p>
+          <p className="text-xs text-[#22223B]/70">Verifying institutional RBAC security state</p>
         </div>
       </div>
     );
@@ -59,27 +58,21 @@ function MainLayout() {
   }
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col bg-[#F8FAFC]">
+    <div className="site-wallpaper h-screen overflow-hidden flex flex-col">
       
       {/* Top Navbar */}
-      <Navbar
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-      />
+      <Navbar />
 
-      {/* Main Body Layout */}
-      <div className="flex-1 flex w-full overflow-hidden">
-        
-        {/* Left Sidebar */}
-        <Sidebar
+      {/* Top Navigation */}
+      <div className="shrink-0">
+        <TopNavigation
           activeTab={activeTab}
           setActiveTab={setActiveTab}
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
         />
+      </div>
 
-        {/* Center Main View Area */}
-        <main className="flex-1 h-full min-h-0 w-full min-w-0 flex flex-col p-3.5 sm:p-6 overflow-y-auto pb-12">
+      {/* Main View Area */}
+      <main className="flex-1 min-h-0 w-full min-w-0 flex flex-col p-3.5 sm:p-6 overflow-y-auto pb-12">
           {role === 'trainer' ? (
             <TrainerPortalView activeSubTab={activeTab === 'trainer' ? 'overview' : activeTab} setActiveSubTab={setActiveTab} />
           ) : role === 'admin' ? (
@@ -101,9 +94,7 @@ function MainLayout() {
               {activeTab === 'certificate' && <CertificateView onNavigate={handleNavigate} />}
             </>
           )}
-        </main>
-
-      </div>
+      </main>
 
     </div>
   );

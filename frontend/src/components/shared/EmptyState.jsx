@@ -9,8 +9,8 @@ export default function EmptyState({
   retryLabel = "Retry Search / Refresh"
 }) {
   return (
-    <div className="p-8 text-center bg-white border border-[#E5E5E2] rounded-xl my-4 space-y-3 shadow-sm">
-      <div className="w-12 h-12 rounded-full bg-[#EAF2F8] text-[#174A7E] flex items-center justify-center mx-auto border border-[#D4E5F2]">
+    <div className="p-8 text-center bg-white border border-[#D7E3FC] rounded-xl my-4 space-y-3 shadow-sm">
+      <div className="w-12 h-12 rounded-full bg-[#EDF2FB] text-[#22223B] flex items-center justify-center mx-auto border border-[#E2EAFC]">
         <Icon className="w-6 h-6" />
       </div>
       <div>
@@ -20,7 +20,7 @@ export default function EmptyState({
       {onRetry && (
         <button
           onClick={onRetry}
-          className="inline-flex items-center space-x-1.5 px-4 py-2 bg-[#174A7E] text-white text-xs font-semibold rounded-lg hover:bg-[#12395F] transition-colors shadow-sm"
+          className="inline-flex items-center space-x-1.5 px-4 py-2 bg-[#ABC4FF] text-[#22223B] text-xs font-semibold rounded-lg hover:bg-[#B6CCFE] transition-colors shadow-sm"
         >
           <RefreshCw className="w-3.5 h-3.5" />
           <span>{retryLabel}</span>

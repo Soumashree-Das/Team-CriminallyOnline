@@ -118,11 +118,11 @@ export default function EnrollmentQueuePanel() {
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
 
       {/* Header Banner */}
-      <div className="shrink-0 p-4 bg-white border border-[#E5E5E2] rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shadow-sm">
+      <div className="shrink-0 p-4 bg-white border border-[#D7E3FC] rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shadow-sm">
         <div>
-          <div className="flex items-center space-x-2 text-[#174A7E] mb-0.5">
+          <div className="flex items-center space-x-2 text-[#22223B] mb-0.5">
             <Users className="w-4 h-4" />
-            <span className="text-[10px] font-bold uppercase bg-[#EAF2F8] px-2 py-0.5 rounded">Enrollment Moderation</span>
+            <span className="text-[10px] font-bold uppercase bg-[#EDF2FB] px-2 py-0.5 rounded">Enrollment Moderation</span>
           </div>
           <h2 className="text-base font-bold text-gray-900">Learner Enrollment & Diagnostic Approval Queue</h2>
           <p className="text-[11px] text-gray-500">Filter, search, and approve applicant enrollments based on entry gate score</p>
@@ -130,8 +130,8 @@ export default function EnrollmentQueuePanel() {
 
         {/* Bulk Action Controls */}
         {selectedIds.length > 0 && (
-          <div className="flex items-center space-x-2 bg-[#EAF2F8] p-2 rounded-lg border border-[#D4E5F2] animate-in fade-in">
-            <span className="text-xs font-bold text-[#174A7E] px-1">{selectedIds.length} Selected</span>
+          <div className="flex items-center space-x-2 bg-[#EDF2FB] p-2 rounded-lg border border-[#E2EAFC] animate-in fade-in">
+            <span className="text-xs font-bold text-[#22223B] px-1">{selectedIds.length} Selected</span>
             <button
               disabled={actionLoading}
               onClick={() => handleBulkAction(true)}
@@ -151,7 +151,7 @@ export default function EnrollmentQueuePanel() {
       </div>
 
       {/* Filter Bar */}
-      <div className="shrink-0 p-3 bg-white border border-[#E5E5E2] rounded-xl grid grid-cols-1 sm:grid-cols-3 gap-3 shadow-sm">
+      <div className="shrink-0 p-3 bg-white border border-[#D7E3FC] rounded-xl grid grid-cols-1 sm:grid-cols-3 gap-3 shadow-sm">
         {/* Search */}
         <div className="relative">
           <Search className="w-4 h-4 text-gray-400 absolute left-3 top-2.5" />
@@ -160,7 +160,7 @@ export default function EnrollmentQueuePanel() {
             placeholder="Search trainee name or email..."
             value={searchQuery}
             onChange={(e) => { setSearchQuery(e.target.value); setPage(1); }}
-            className="w-full pl-9 pr-3 py-1.5 bg-[#F7F7F5] border border-gray-300 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+            className="w-full pl-9 pr-3 py-1.5 bg-[#EDF2FB] border border-gray-300 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-[#22223B]"
           />
         </div>
 
@@ -169,7 +169,7 @@ export default function EnrollmentQueuePanel() {
           <select
             value={selectedCourse}
             onChange={(e) => { setSelectedCourse(e.target.value); setPage(1); }}
-            className="w-full p-1.5 bg-[#F7F7F5] border border-gray-300 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+            className="w-full p-1.5 bg-[#EDF2FB] border border-gray-300 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-[#22223B]"
           >
             <option value="">All Course Tracks</option>
             {courses.map(c => (
@@ -183,7 +183,7 @@ export default function EnrollmentQueuePanel() {
           <select
             value={selectedStatus}
             onChange={(e) => { setSelectedStatus(e.target.value); setPage(1); }}
-            className="w-full p-1.5 bg-[#F7F7F5] border border-gray-300 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+            className="w-full p-1.5 bg-[#EDF2FB] border border-gray-300 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-[#22223B]"
           >
             <option value="all">All Statuses</option>
             <option value="approval_pending">Pending Approval</option>
@@ -196,9 +196,9 @@ export default function EnrollmentQueuePanel() {
 
       {/* Table Section */}
       {loading ? (
-        <div className="flex-1 min-h-0 flex items-center justify-center text-gray-500 bg-white border border-[#E5E5E2] rounded-xl">
+        <div className="flex-1 min-h-0 flex items-center justify-center text-gray-500 bg-white border border-[#D7E3FC] rounded-xl">
           <div className="text-center">
-            <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#174A7E]" />
+            <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#22223B]" />
             <p className="text-xs font-semibold text-gray-700">Loading Enrollment Requests...</p>
           </div>
         </div>
@@ -222,15 +222,15 @@ export default function EnrollmentQueuePanel() {
           />
         </div>
       ) : (
-        <div className="flex-1 min-h-0 flex flex-col bg-white border border-[#E5E5E2] rounded-xl p-4 shadow-sm overflow-hidden">
-          <div className="flex-1 min-h-0 overflow-auto border border-[#E5E5E2] rounded-lg">
+        <div className="flex-1 min-h-0 flex flex-col bg-white border border-[#D7E3FC] rounded-xl p-4 shadow-sm overflow-hidden">
+          <div className="flex-1 min-h-0 overflow-auto border border-[#D7E3FC] rounded-lg">
             <table className="w-full text-left text-xs border-collapse">
-              <thead className="sticky top-0 bg-[#F7F7F5] border-b border-[#E5E5E2] text-gray-700 font-bold uppercase tracking-wider z-10">
+              <thead className="sticky top-0 bg-[#EDF2FB] border-b border-[#D7E3FC] text-gray-700 font-bold uppercase tracking-wider z-10">
                 <tr>
                   <th className="p-2.5 w-10 text-center">
                     <button onClick={toggleSelectAll} className="text-gray-500 hover:text-gray-700">
                       {selectedIds.length === enrollments.length ? (
-                        <CheckSquare className="w-4 h-4 text-[#174A7E]" />
+                        <CheckSquare className="w-4 h-4 text-[#22223B]" />
                       ) : (
                         <Square className="w-4 h-4" />
                       )}
@@ -252,7 +252,7 @@ export default function EnrollmentQueuePanel() {
                       <td className="p-2.5 text-center">
                         <button onClick={() => toggleSelect(r.enrollment_id)} className="text-gray-500">
                           {isSelected ? (
-                            <CheckSquare className="w-4 h-4 text-[#174A7E]" />
+                            <CheckSquare className="w-4 h-4 text-[#22223B]" />
                           ) : (
                             <Square className="w-4 h-4" />
                           )}
@@ -265,7 +265,7 @@ export default function EnrollmentQueuePanel() {
                       <td className="p-2.5 font-medium text-gray-800">
                         {r.course_code ? `${r.course_code}: ` : ''}{r.course_title}
                       </td>
-                      <td className="p-2.5 font-extrabold text-[#174A7E]">
+                      <td className="p-2.5 font-extrabold text-[#22223B]">
                         {r.diagnostic_score}%
                       </td>
                       <td className="p-2.5">
@@ -275,7 +275,7 @@ export default function EnrollmentQueuePanel() {
                             : r.status === 'rejected'
                             ? 'bg-red-50 text-red-800 border-red-200'
                             : r.status === 'completed'
-                            ? 'bg-blue-50 text-[#174A7E] border-blue-200'
+                            ? 'bg-blue-50 text-[#22223B] border-blue-200'
                             : 'bg-amber-50 text-amber-900 border-amber-200'
                         }`}>
                           {r.status === 'approval_pending' ? 'Pending Approval' : r.status.toUpperCase()}

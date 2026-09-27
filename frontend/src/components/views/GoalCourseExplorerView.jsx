@@ -110,8 +110,8 @@ export default function GoalCourseExplorerView({ onNavigate }) {
     <div className="space-y-6">
       
       {/* Goal Setup Header Banner */}
-      <div className="inst-card p-6 bg-white border border-[#E5E5E2] rounded-xl space-y-4">
-        <div className="flex items-center space-x-2 text-[#174A7E]">
+      <div className="inst-card p-6 bg-white border border-[#D7E3FC] rounded-xl space-y-4">
+        <div className="flex items-center space-x-2 text-[#22223B]">
           <Target className="w-5 h-5" />
           <h1 className="text-xl font-bold text-gray-900">Career Goal & Competency Explorer</h1>
         </div>
@@ -127,8 +127,8 @@ export default function GoalCourseExplorerView({ onNavigate }) {
               onClick={() => setSelectedGoal(g.id)}
               className={`p-3 text-left rounded-lg border text-xs transition-all ${
                 selectedGoal === g.id
-                  ? 'bg-[#EAF2F8] border-[#174A7E] text-[#12395F] font-semibold shadow-sm'
-                  : 'bg-white border-[#E5E5E2] text-gray-700 hover:bg-gray-50'
+                  ? 'bg-[#EDF2FB] border-[#22223B] text-[#22223B]/70 font-semibold shadow-sm'
+                  : 'bg-white border-[#D7E3FC] text-gray-700 hover:bg-gray-50'
               }`}
             >
               <p className="font-bold text-sm mb-1">{g.title}</p>
@@ -139,15 +139,15 @@ export default function GoalCourseExplorerView({ onNavigate }) {
       </div>
 
       {/* Selected Goal Competencies Box */}
-      <div className="inst-card p-5 bg-[#F7F7F5] border border-[#E5E5E2] rounded-xl space-y-3">
+      <div className="inst-card p-5 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl space-y-3">
         <h2 className="text-sm font-bold text-gray-900 flex items-center space-x-2">
-          <ShieldCheck className="w-4 h-4 text-[#174A7E]" />
+          <ShieldCheck className="w-4 h-4 text-[#22223B]" />
           <span>Required Competencies for {currentGoalObj.title}</span>
         </h2>
 
         <div className="flex flex-wrap gap-2">
           {currentGoalObj.competencies.map((comp, idx) => (
-            <span key={idx} className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-white text-gray-800 border border-[#E5E5E2] shadow-xs">
+            <span key={idx} className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-white text-gray-800 border border-[#D7E3FC] shadow-xs">
               <CheckCircle className="w-3.5 h-3.5 mr-1.5 text-emerald-600" />
               {comp}
             </span>
@@ -169,7 +169,7 @@ export default function GoalCourseExplorerView({ onNavigate }) {
             <select
               value={filterLevel}
               onChange={(e) => setFilterLevel(e.target.value)}
-              className="text-xs border border-gray-300 rounded-md px-2.5 py-1.5 bg-white text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+              className="text-xs border border-gray-300 rounded-md px-2.5 py-1.5 bg-white text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#22223B]"
             >
               <option value="all">All Levels</option>
               <option value="beginner">Beginner</option>
@@ -185,7 +185,7 @@ export default function GoalCourseExplorerView({ onNavigate }) {
               
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#174A7E] bg-[#EAF2F8] px-2.5 py-0.5 rounded border border-[#D4E5F2]">
+                  <span className="text-xs font-bold text-[#22223B] bg-[#EDF2FB] px-2.5 py-0.5 rounded border border-[#E2EAFC]">
                     {c.code}
                   </span>
                   <span className="text-[11px] font-semibold text-gray-600 bg-gray-100 px-2 py-0.5 rounded">
@@ -214,7 +214,7 @@ export default function GoalCourseExplorerView({ onNavigate }) {
 
                   <button
                     onClick={() => onNavigate('diagnostic')}
-                    className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-[#174A7E] hover:bg-[#12395F] rounded-md transition-colors"
+                    className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-[#22223B] bg-[#ABC4FF] hover:bg-[#B6CCFE] rounded-md transition-colors"
                   >
                     <span>Diagnostic & Enroll</span>
                     <ArrowRight className="w-3.5 h-3.5" />

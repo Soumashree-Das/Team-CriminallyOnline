@@ -320,7 +320,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
   );
 
   return (
-    <div className="w-full h-full flex flex-col overflow-y-auto pr-1 pb-8 space-y-4 bg-[#F4F1EA]">
+    <div className="w-full h-full flex flex-col overflow-y-auto pr-1 pb-8 space-y-4 bg-[#EDF2FB]">
       
       {/* Toast Notification */}
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
@@ -341,18 +341,18 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       </div>
 
       {/* Editorial Hero Header Card */}
-      <div className="shrink-0 bg-[#EBE6DD] border border-[#DDD5C7] rounded-2xl p-4 sm:p-5 relative overflow-hidden shadow-sm">
+      <div className="shrink-0 bg-[#EDF2FB] border border-[#D7E3FC] rounded-2xl p-4 sm:p-5 relative overflow-hidden shadow-sm">
         {/* Background Decorative Abstract Lines */}
         <div className="absolute right-0 top-0 bottom-0 opacity-15 w-80 pointer-events-none flex items-center justify-end pr-4">
           <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-            <path d="M0 50C50 20 100 80 150 30C180 0 200 20 200 50C200 80 150 100 100 80C50 60 0 80 0 50Z" stroke="#4A3E2A" strokeWidth="1.5" />
-            <path d="M20 70C70 40 120 90 170 40" stroke="#4A3E2A" strokeWidth="1" strokeDasharray="3 3" />
+            <path d="M0 50C50 20 100 80 150 30C180 0 200 20 200 50C200 80 150 100 100 80C50 60 0 80 0 50Z" stroke="#22223B" strokeWidth="1.5" />
+            <path d="M20 70C70 40 120 90 170 40" stroke="#22223B" strokeWidth="1" strokeDasharray="3 3" />
           </svg>
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center space-x-1.5 bg-[#DDD5C7] text-[#4A3E2A] text-[10px] font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full border border-[#CCC2B2] mb-1.5">
+            <div className="inline-flex items-center space-x-1.5 bg-[#D7E3FC] text-[#22223B] text-[10px] font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full border border-[#CCDBFD] mb-1.5">
               <Edit3 className="w-3 h-3" />
               <span>Adaptive Governance</span>
             </div>
@@ -366,14 +366,14 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
 
           <div className="flex items-center space-x-4 shrink-0">
             <div className="hidden lg:block text-right">
-              <p className="font-serif-quote italic text-sm text-[#5C4D38] leading-tight">Make Learning Personal</p>
+              <p className="font-serif-quote italic text-sm text-[#22223B] leading-tight">Make Learning Personal</p>
             </div>
             <button
               disabled={saving || loading || !roadmap?.roadmap_id}
               onClick={handleSaveOverride}
-              className="px-4 py-2.5 bg-[#18181B] text-white hover:bg-zinc-800 disabled:opacity-50 rounded-xl font-bold text-xs flex items-center space-x-2 shadow-md transition-all border border-zinc-700"
+              className="px-4 py-2.5 bg-[#ABC4FF] text-[#22223B] hover:bg-[#B6CCFE] disabled:opacity-50 rounded-xl font-bold text-xs flex items-center space-x-2 shadow-md transition-all border border-zinc-700"
             >
-              {saving ? <RefreshCw className="w-4 h-4 animate-spin text-[#D4AF37]" /> : <Save className="w-4 h-4 text-[#D4AF37]" />}
+              {saving ? <RefreshCw className="w-4 h-4 animate-spin text-[#22223B]" /> : <Save className="w-4 h-4 text-[#22223B]" />}
               <span>Save Roadmap Override</span>
             </button>
           </div>
@@ -384,9 +384,9 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       <div className="shrink-0 grid grid-cols-1 md:grid-cols-3 gap-3">
         
         {/* Card 1: Select Learner Trainee */}
-        <div className="bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl p-3 shadow-xs space-y-2">
+        <div className="bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl p-3 shadow-xs space-y-2">
           <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#4A3E2A] text-amber-200 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#ABC4FF] text-[#22223B] flex items-center justify-center shrink-0">
               <UserCheck className="w-4 h-4" />
             </div>
             <div>
@@ -397,7 +397,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
           <select
             value={selectedTraineeId}
             onChange={(e) => setSelectedTraineeId(Number(e.target.value))}
-            className="w-full p-2 bg-white border border-[#DDD6C9] rounded-lg text-xs font-semibold text-zinc-900 focus:outline-none focus:border-[#4A3E2A]"
+            className="w-full p-2 bg-white border border-[#CCDBFD] rounded-lg text-xs font-semibold text-zinc-900 focus:outline-none focus:border-[#22223B]"
           >
             {trainees.map(t => (
               <option key={t.trainee_id} value={t.trainee_id}>{t.full_name} (ID #{t.trainee_id})</option>
@@ -412,9 +412,9 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
         </div>
 
         {/* Card 2: Select Course Track */}
-        <div className="bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl p-3 shadow-xs space-y-2">
+        <div className="bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl p-3 shadow-xs space-y-2">
           <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#4A3E2A] text-amber-200 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#ABC4FF] text-[#22223B] flex items-center justify-center shrink-0">
               <BookOpen className="w-4 h-4" />
             </div>
             <div>
@@ -425,7 +425,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
           <select
             value={selectedCourseId}
             onChange={(e) => setSelectedCourseId(Number(e.target.value))}
-            className="w-full p-2 bg-white border border-[#DDD6C9] rounded-lg text-xs font-semibold text-zinc-900 focus:outline-none focus:border-[#4A3E2A]"
+            className="w-full p-2 bg-white border border-[#CCDBFD] rounded-lg text-xs font-semibold text-zinc-900 focus:outline-none focus:border-[#22223B]"
           >
             {courses.map(c => (
               <option key={c.id} value={c.id}>{c.code}: {c.title}</option>
@@ -440,9 +440,9 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
         </div>
 
         {/* Card 3: Override Audit Rationale */}
-        <div className="bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl p-3 shadow-xs space-y-2 flex flex-col justify-between">
+        <div className="bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl p-3 shadow-xs space-y-2 flex flex-col justify-between">
           <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#4A3E2A] text-amber-200 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#ABC4FF] text-[#22223B] flex items-center justify-center shrink-0">
               <Edit3 className="w-4 h-4" />
             </div>
             <div>
@@ -454,7 +454,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
             type="text"
             value={overrideNotes}
             onChange={(e) => setOverrideNotes(e.target.value)}
-            className="w-full p-2 bg-white border border-[#DDD6C9] rounded-lg text-xs text-zinc-900 focus:outline-none focus:border-[#4A3E2A]"
+            className="w-full p-2 bg-white border border-[#CCDBFD] rounded-lg text-xs text-zinc-900 focus:outline-none focus:border-[#22223B]"
             placeholder="Reason for overriding AI schedule..."
           />
           <div className="text-right text-[9px] text-zinc-400 font-mono">
@@ -468,13 +468,13 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-3 pb-8">
         
         {/* Left Column (~75% Width): Main Editor Table Card */}
-        <div className="lg:col-span-3 flex flex-col bg-white border border-[#E8E3DA] rounded-2xl p-4 shadow-sm min-h-[460px]">
+        <div className="lg:col-span-3 flex flex-col bg-white border border-[#D7E3FC] rounded-2xl p-4 shadow-sm min-h-[460px]">
           
           {/* Editor Header Bar */}
           <div className="shrink-0 flex flex-col sm:flex-row justify-between sm:items-center gap-3 pb-3 mb-3 border-b border-zinc-100">
             <div>
               <div className="flex items-center space-x-2">
-                <FileSpreadsheet className="w-4 h-4 text-[#4A3E2A]" />
+                <FileSpreadsheet className="w-4 h-4 text-[#22223B]" />
                 <h3 className="font-extrabold text-sm text-zinc-900">Custom Roadmap Items & Hours Editor</h3>
               </div>
               <p className="text-[11px] text-zinc-500 mt-0.5">Update module status, estimated hours, and provide rationale for each concept.</p>
@@ -488,21 +488,21 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                   placeholder="Search modules..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-8 pr-3 py-1.5 bg-[#FAF8F5] border border-[#DDD6C9] rounded-lg text-xs text-zinc-800 focus:outline-none focus:border-[#4A3E2A] w-36 sm:w-44"
+                  className="pl-8 pr-3 py-1.5 bg-[#EDF2FB] border border-[#CCDBFD] rounded-lg text-xs text-zinc-800 focus:outline-none focus:border-[#22223B] w-36 sm:w-44"
                 />
               </div>
 
               <button
                 onClick={() => setActiveModal('add_module')}
-                className="px-2.5 py-1.5 bg-[#4A3E2A] hover:bg-zinc-800 text-white text-xs font-bold rounded-lg flex items-center space-x-1 transition-colors shadow-xs"
+                className="px-2.5 py-1.5 bg-[#ABC4FF] hover:bg-[#B6CCFE] text-[#22223B] text-xs font-bold rounded-lg flex items-center space-x-1 transition-colors shadow-xs"
               >
-                <Plus className="w-3.5 h-3.5 text-amber-300" />
+                <Plus className="w-3.5 h-3.5 text-[#22223B]" />
                 <span>+ Add Module</span>
               </button>
 
               <button
                 onClick={() => setActiveModal('bulk_edit')}
-                className="px-2.5 py-1.5 bg-[#FAF8F5] hover:bg-[#F4F1EA] border border-[#DDD6C9] text-zinc-800 text-xs font-semibold rounded-lg flex items-center space-x-1 transition-colors"
+                className="px-2.5 py-1.5 bg-[#EDF2FB] hover:bg-[#EDF2FB] border border-[#CCDBFD] text-zinc-800 text-xs font-semibold rounded-lg flex items-center space-x-1 transition-colors"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5 text-zinc-600" />
                 <span className="hidden sm:inline">Bulk Edit ({selectedItemIds.length})</span>
@@ -512,9 +512,9 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
 
           {/* Table Container */}
           {loading ? (
-            <div className="flex-1 min-h-0 flex items-center justify-center text-zinc-500 bg-[#FAF8F5] rounded-xl border border-dashed border-[#DDD6C9]">
+            <div className="flex-1 min-h-0 flex items-center justify-center text-zinc-500 bg-[#EDF2FB] rounded-xl border border-dashed border-[#CCDBFD]">
               <div className="text-center">
-                <RefreshCw className="w-7 h-7 animate-spin mx-auto mb-2 text-[#4A3E2A]" />
+                <RefreshCw className="w-7 h-7 animate-spin mx-auto mb-2 text-[#22223B]" />
                 <p className="text-xs font-bold text-zinc-700">Loading Learner Roadmap...</p>
               </div>
             </div>
@@ -528,8 +528,8 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
               />
             </div>
           ) : filteredItems.length === 0 ? (
-            <div className="flex-1 min-h-0 overflow-y-auto flex flex-col items-center justify-center p-6 text-center bg-[#FAF8F5] rounded-xl border border-dashed border-[#DDD6C9]">
-              <Edit3 className="w-10 h-10 text-[#4A3E2A] opacity-60 mb-2" />
+            <div className="flex-1 min-h-0 overflow-y-auto flex flex-col items-center justify-center p-6 text-center bg-[#EDF2FB] rounded-xl border border-dashed border-[#CCDBFD]">
+              <Edit3 className="w-10 h-10 text-[#22223B] opacity-60 mb-2" />
               <h4 className="text-sm font-bold text-zinc-900">No roadmap items found</h4>
               <p className="text-xs text-zinc-500 max-w-sm mt-1 mb-4">
                 No custom concepts currently populated for this trainee track. Add a module manually or generate standard AI plan.
@@ -537,7 +537,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() => setActiveModal('add_module')}
-                  className="px-3.5 py-2 bg-[#4A3E2A] text-white text-xs font-bold rounded-lg hover:bg-zinc-800"
+                  className="px-3.5 py-2 bg-[#ABC4FF] text-[#22223B] text-xs font-bold rounded-lg hover:bg-[#B6CCFE]"
                 >
                   + Add First Module
                 </button>
@@ -551,16 +551,16 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
             </div>
           ) : (
             <div className="flex flex-col justify-between space-y-3">
-              <div className="overflow-x-auto border border-[#E8E3DA] rounded-xl min-h-[300px]">
+              <div className="overflow-x-auto border border-[#D7E3FC] rounded-xl min-h-[300px]">
                 <table className="w-full text-left text-xs border-collapse">
-                  <thead className="sticky top-0 bg-[#F4F1EA] border-b border-[#E8E3DA] text-zinc-700 font-bold uppercase tracking-wider text-[10px] z-10">
+                  <thead className="sticky top-0 bg-[#EDF2FB] border-b border-[#D7E3FC] text-zinc-700 font-bold uppercase tracking-wider text-[10px] z-10">
                     <tr>
                       <th className="p-3 w-8">
                         <input 
                           type="checkbox" 
                           checked={selectedItemIds.length === filteredItems.length && filteredItems.length > 0}
                           onChange={handleToggleSelectAll}
-                          className="rounded border-zinc-300 text-[#4A3E2A] focus:ring-[#4A3E2A]" 
+                          className="rounded border-zinc-300 text-[#22223B] focus:ring-[#22223B]"
                         />
                       </th>
                       <th className="p-3">WEEK</th>
@@ -578,13 +578,13 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                       const isSelected = selectedItemIds.includes(item.id);
 
                       return (
-                        <tr key={item.id} className={`hover:bg-[#FAF8F5]/80 transition-colors ${isSelected ? 'bg-amber-50/40' : ''}`}>
+                        <tr key={item.id} className={`hover:bg-[#EDF2FB]/80 transition-colors ${isSelected ? 'bg-amber-50/40' : ''}`}>
                           <td className="p-3">
                             <input 
                               type="checkbox" 
                               checked={isSelected}
                               onChange={() => handleToggleSelectItem(item.id)}
-                              className="rounded border-zinc-300 text-[#4A3E2A] focus:ring-[#4A3E2A]" 
+                              className="rounded border-zinc-300 text-[#22223B] focus:ring-[#22223B]"
                             />
                           </td>
                           <td className="p-3 font-bold text-zinc-800">
@@ -594,12 +594,12 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                               max="52"
                               value={item.week_number || 1}
                               onChange={(e) => handleItemChange(item.id, 'week_number', e.target.value)}
-                              className="w-12 p-1 bg-[#FAF8F5] border border-zinc-300 rounded text-center font-bold text-xs text-zinc-900 focus:outline-none focus:border-[#4A3E2A]"
+                              className="w-12 p-1 bg-[#EDF2FB] border border-zinc-300 rounded text-center font-bold text-xs text-zinc-900 focus:outline-none focus:border-[#22223B]"
                             />
                           </td>
                           <td className="p-3 font-bold text-zinc-900">
                             <div className="flex items-center space-x-2">
-                              <div className="w-6 h-6 rounded bg-[#F4F1EA] text-[#4A3E2A] flex items-center justify-center text-xs font-bold border border-[#E8E3DA] shrink-0">
+                              <div className="w-6 h-6 rounded bg-[#EDF2FB] text-[#22223B] flex items-center justify-center text-xs font-bold border border-[#D7E3FC] shrink-0">
                                 {item.title ? item.title[0] : 'M'}
                               </div>
                               <span className="truncate max-w-xs">{item.title}</span>
@@ -611,10 +611,10 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                               onChange={(e) => handleItemChange(item.id, 'status', e.target.value)}
                               className={`px-2 py-1 rounded-md text-xs font-bold border focus:outline-none ${
                                 isSage 
-                                  ? 'bg-[#E3EBE3] text-[#264A26] border-[#C4DAC4]'
+                                  ? 'bg-[#D7E3FC] text-[#22223B] border-[#CCDBFD]'
                                   : isAmber 
-                                  ? 'bg-[#FBF3D5] text-[#5C4610] border-[#F2E3A8]'
-                                  : 'bg-[#E8F0F8] text-[#1E3A5F] border-[#C3D7ED]'
+                                  ? 'bg-[#EDF2FB] text-[#22223B] border-[#D7E3FC]'
+                                  : 'bg-[#E2EAFC] text-[#22223B] border-[#D7E3FC]'
                               }`}
                             >
                               <option value="skipped_mastered">Skipped / Fast-tracked</option>
@@ -632,7 +632,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                               max="40"
                               value={item.estimated_hours}
                               onChange={(e) => handleItemChange(item.id, 'estimated_hours', e.target.value)}
-                              className="w-14 p-1 bg-[#FAF8F5] border border-zinc-300 rounded font-bold text-center text-xs text-zinc-900 focus:outline-none focus:border-[#4A3E2A]"
+                              className="w-14 p-1 bg-[#EDF2FB] border border-zinc-300 rounded font-bold text-center text-xs text-zinc-900 focus:outline-none focus:border-[#22223B]"
                             />
                           </td>
                           <td className="p-3 text-zinc-500 italic max-w-xs truncate text-[11px]">
@@ -672,15 +672,15 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                 <div className="flex items-center space-x-3">
                   <div className="flex items-center space-x-1.5">
                     <span>Rows per page:</span>
-                    <select className="bg-[#FAF8F5] border border-zinc-300 rounded px-2 py-0.5 text-xs font-semibold text-zinc-800">
+                    <select className="bg-[#EDF2FB] border border-zinc-300 rounded px-2 py-0.5 text-xs font-semibold text-zinc-800">
                       <option>10</option>
                       <option>20</option>
                     </select>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <button className="px-2 py-1 border border-zinc-300 rounded bg-[#FAF8F5] text-zinc-600 hover:bg-zinc-100 disabled:opacity-40">&lt;</button>
-                    <button className="px-2.5 py-1 bg-[#18181B] text-white font-bold rounded">1</button>
-                    <button className="px-2 py-1 border border-zinc-300 rounded bg-[#FAF8F5] text-zinc-600 hover:bg-zinc-100">&gt;</button>
+                    <button className="px-2 py-1 border border-zinc-300 rounded bg-[#EDF2FB] text-zinc-600 hover:bg-zinc-100 disabled:opacity-40">&lt;</button>
+                    <button className="px-2.5 py-1 bg-[#ABC4FF] text-[#22223B] font-bold rounded">1</button>
+                    <button className="px-2 py-1 border border-zinc-300 rounded bg-[#EDF2FB] text-zinc-600 hover:bg-zinc-100">&gt;</button>
                   </div>
                 </div>
               </div>
@@ -693,18 +693,18 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
         <div className="lg:col-span-1 flex flex-col space-y-3">
           
           {/* Widget 1: Progress Snapshot Card */}
-          <div className="bg-white border border-[#E8E3DA] rounded-2xl p-4 shadow-sm space-y-3">
+          <div className="bg-white border border-[#D7E3FC] rounded-2xl p-4 shadow-sm space-y-3">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-2">
               <h3 className="font-extrabold text-xs text-zinc-900">Learner Progress Snapshot</h3>
-              <button className="text-[10px] font-bold text-[#4A3E2A] hover:underline flex items-center space-x-0.5">
+              <button className="text-[10px] font-bold text-[#22223B] hover:underline flex items-center space-x-0.5">
                 <span>View Profile</span>
                 <ChevronRight className="w-3 h-3" />
               </button>
             </div>
 
             {/* Circular Donut Visual */}
-            <div className="flex items-center space-x-3 bg-[#FAF8F5] p-3 rounded-xl border border-[#E8E3DA]">
-              <div className="relative w-14 h-14 rounded-full border-4 border-[#C5A880] border-t-zinc-800 flex items-center justify-center font-black text-sm text-zinc-900 shrink-0 shadow-inner">
+            <div className="flex items-center space-x-3 bg-[#EDF2FB] p-3 rounded-xl border border-[#D7E3FC]">
+              <div className="relative w-14 h-14 rounded-full border-4 border-[#ABC4FF] border-t-zinc-800 flex items-center justify-center font-black text-sm text-zinc-900 shrink-0 shadow-inner">
                 65%
               </div>
               <div>
@@ -718,54 +718,54 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
 
             {/* Metrics Grid */}
             <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] pt-1">
-              <div className="p-2 bg-[#E3EBE3] rounded-lg border border-[#C4DAC4]">
-                <p className="text-sm font-extrabold text-[#264A26]">{editableItems.filter(i => i.status === 'completed' || i.status === 'skipped_mastered').length}</p>
-                <p className="font-bold text-[#264A26]">Done</p>
+              <div className="p-2 bg-[#D7E3FC] rounded-lg border border-[#CCDBFD]">
+                <p className="text-sm font-extrabold text-[#22223B]">{editableItems.filter(i => i.status === 'completed' || i.status === 'skipped_mastered').length}</p>
+                <p className="font-bold text-[#22223B]">Done</p>
               </div>
-              <div className="p-2 bg-[#FBF3D5] rounded-lg border border-[#F2E3A8]">
-                <p className="text-sm font-extrabold text-[#5C4610]">{editableItems.filter(i => i.status === 'needs_revision' || i.status === 'in_progress').length}</p>
-                <p className="font-bold text-[#5C4610]">Active</p>
+              <div className="p-2 bg-[#EDF2FB] rounded-lg border border-[#D7E3FC]">
+                <p className="text-sm font-extrabold text-[#22223B]">{editableItems.filter(i => i.status === 'needs_revision' || i.status === 'in_progress').length}</p>
+                <p className="font-bold text-[#22223B]">Active</p>
               </div>
-              <div className="p-2 bg-[#EFECE6] rounded-lg border border-[#DDD8CE]">
-                <p className="text-sm font-extrabold text-[#55524D]">{editableItems.filter(i => i.status === 'locked' || i.status === 'upcoming').length}</p>
-                <p className="font-bold text-[#55524D]">Pending</p>
+              <div className="p-2 bg-[#EDF2FB] rounded-lg border border-[#D7E3FC]">
+                <p className="text-sm font-extrabold text-[#22223B]">{editableItems.filter(i => i.status === 'locked' || i.status === 'upcoming').length}</p>
+                <p className="font-bold text-[#22223B]">Pending</p>
               </div>
             </div>
           </div>
 
           {/* Widget 2: Quick Actions */}
-          <div className="bg-white border border-[#E8E3DA] rounded-2xl p-4 shadow-sm space-y-2">
+          <div className="bg-white border border-[#D7E3FC] rounded-2xl p-4 shadow-sm space-y-2">
             <h4 className="font-bold text-xs text-zinc-900 mb-2 uppercase tracking-wider text-[10px]">Quick Actions</h4>
             <div className="space-y-1.5 text-xs">
               <button 
                 onClick={() => setActiveModal('preview')}
-                className="w-full text-left p-2 rounded-lg bg-[#FAF8F5] hover:bg-[#F4F1EA] text-zinc-800 font-semibold border border-[#E8E3DA] transition-colors flex items-center space-x-2"
+                className="w-full text-left p-2 rounded-lg bg-[#EDF2FB] hover:bg-[#EDF2FB] text-zinc-800 font-semibold border border-[#D7E3FC] transition-colors flex items-center space-x-2"
               >
-                <Sparkles className="w-3.5 h-3.5 text-[#4A3E2A]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#22223B]" />
                 <span className="truncate">Preview Learner Roadmap</span>
               </button>
 
               <button 
                 onClick={() => setActiveModal('compare')}
-                className="w-full text-left p-2 rounded-lg bg-[#FAF8F5] hover:bg-[#F4F1EA] text-zinc-800 font-semibold border border-[#E8E3DA] transition-colors flex items-center space-x-2"
+                className="w-full text-left p-2 rounded-lg bg-[#EDF2FB] hover:bg-[#EDF2FB] text-zinc-800 font-semibold border border-[#D7E3FC] transition-colors flex items-center space-x-2"
               >
-                <FileSpreadsheet className="w-3.5 h-3.5 text-[#4A3E2A]" />
+                <FileSpreadsheet className="w-3.5 h-3.5 text-[#22223B]" />
                 <span className="truncate">Compare with Default Plan</span>
               </button>
 
               <button 
                 onClick={handleOpenAuditHistory}
-                className="w-full text-left p-2 rounded-lg bg-[#FAF8F5] hover:bg-[#F4F1EA] text-zinc-800 font-semibold border border-[#E8E3DA] transition-colors flex items-center space-x-2"
+                className="w-full text-left p-2 rounded-lg bg-[#EDF2FB] hover:bg-[#EDF2FB] text-zinc-800 font-semibold border border-[#D7E3FC] transition-colors flex items-center space-x-2"
               >
-                <Clock className="w-3.5 h-3.5 text-[#4A3E2A]" />
+                <Clock className="w-3.5 h-3.5 text-[#22223B]" />
                 <span className="truncate">View Audit History</span>
               </button>
 
               <button 
                 onClick={() => setActiveModal('notify')}
-                className="w-full text-left p-2 rounded-lg bg-[#FAF8F5] hover:bg-[#F4F1EA] text-zinc-800 font-semibold border border-[#E8E3DA] transition-colors flex items-center space-x-2"
+                className="w-full text-left p-2 rounded-lg bg-[#EDF2FB] hover:bg-[#EDF2FB] text-zinc-800 font-semibold border border-[#D7E3FC] transition-colors flex items-center space-x-2"
               >
-                <Mail className="w-3.5 h-3.5 text-[#4A3E2A]" />
+                <Mail className="w-3.5 h-3.5 text-[#22223B]" />
                 <span className="truncate">Notify Learner</span>
               </button>
             </div>
@@ -780,10 +780,10 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       {/* 1. Add Module Modal */}
       {activeModal === 'add_module' && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl border border-[#E8E3DA]">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl border border-[#D7E3FC]">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
               <div className="flex items-center space-x-2">
-                <Plus className="w-5 h-5 text-[#4A3E2A]" />
+                <Plus className="w-5 h-5 text-[#22223B]" />
                 <h3 className="text-base font-extrabold text-zinc-900">Add Concept Module to Roadmap</h3>
               </div>
               <button onClick={() => setActiveModal(null)} className="p-1 rounded bg-zinc-100 hover:bg-zinc-200">
@@ -807,7 +807,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                       estimated_hours: found ? (found.estimated_hours || 4.0) : prev.estimated_hours
                     }));
                   }}
-                  className="w-full p-2 bg-[#FAF8F5] border border-zinc-300 rounded-lg text-xs font-semibold text-zinc-900"
+                  className="w-full p-2 bg-[#EDF2FB] border border-zinc-300 rounded-lg text-xs font-semibold text-zinc-900"
                 >
                   <option value="">-- Or enter custom title below --</option>
                   {availableConcepts.map(c => (
@@ -824,7 +824,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                   value={newModuleForm.title}
                   onChange={(e) => setNewModuleForm(prev => ({ ...prev, title: e.target.value }))}
                   placeholder="e.g. Advanced Transformer Architectures"
-                  className="w-full p-2 border border-zinc-300 rounded-lg text-xs text-zinc-900 focus:outline-none focus:border-[#4A3E2A]"
+                  className="w-full p-2 border border-zinc-300 rounded-lg text-xs text-zinc-900 focus:outline-none focus:border-[#22223B]"
                 />
               </div>
 
@@ -882,7 +882,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                 <button type="button" onClick={() => setActiveModal(null)} className="px-3 py-2 border border-zinc-300 text-zinc-700 rounded-lg text-xs font-semibold">
                   Cancel
                 </button>
-                <button type="submit" className="px-4 py-2 bg-[#4A3E2A] text-white rounded-lg text-xs font-bold hover:bg-zinc-800">
+                <button type="submit" className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded-lg text-xs font-bold hover:bg-[#B6CCFE]">
                   Add Module
                 </button>
               </div>
@@ -894,10 +894,10 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       {/* 2. Bulk Edit Modal */}
       {activeModal === 'bulk_edit' && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl border border-[#E8E3DA]">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl border border-[#D7E3FC]">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
               <div className="flex items-center space-x-2">
-                <SlidersHorizontal className="w-5 h-5 text-[#4A3E2A]" />
+                <SlidersHorizontal className="w-5 h-5 text-[#22223B]" />
                 <h3 className="text-base font-extrabold text-zinc-900">Bulk Edit Roadmap Modules</h3>
               </div>
               <button onClick={() => setActiveModal(null)} className="p-1 rounded bg-zinc-100 hover:bg-zinc-200">
@@ -916,7 +916,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                       value="selected" 
                       checked={bulkEditForm.applyScope === 'selected'}
                       onChange={() => setBulkEditForm(prev => ({ ...prev, applyScope: 'selected' }))}
-                      className="text-[#4A3E2A]" 
+                      className="text-[#22223B]"
                     />
                     <span>Selected Items ({selectedItemIds.length})</span>
                   </label>
@@ -927,7 +927,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                       value="all" 
                       checked={bulkEditForm.applyScope === 'all'}
                       onChange={() => setBulkEditForm(prev => ({ ...prev, applyScope: 'all' }))}
-                      className="text-[#4A3E2A]" 
+                      className="text-[#22223B]"
                     />
                     <span>All Items ({editableItems.length})</span>
                   </label>
@@ -984,7 +984,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                 <button type="button" onClick={() => setActiveModal(null)} className="px-3 py-2 border border-zinc-300 text-zinc-700 rounded-lg text-xs font-semibold">
                   Cancel
                 </button>
-                <button type="submit" className="px-4 py-2 bg-[#4A3E2A] text-white rounded-lg text-xs font-bold hover:bg-zinc-800">
+                <button type="submit" className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded-lg text-xs font-bold hover:bg-[#B6CCFE]">
                   Apply Bulk Updates
                 </button>
               </div>
@@ -996,7 +996,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       {/* 3. Edit Item Modal */}
       {activeModal === 'edit_item' && editingItem && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-[#E8E3DA]">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-[#D7E3FC]">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
               <h3 className="text-base font-extrabold text-zinc-900">Edit Module Details</h3>
               <button onClick={() => setActiveModal(null)} className="p-1 rounded bg-zinc-100 hover:bg-zinc-200">
@@ -1068,7 +1068,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                 <button type="button" onClick={() => setActiveModal(null)} className="px-3 py-2 border border-zinc-300 text-zinc-700 rounded-lg text-xs font-semibold">
                   Cancel
                 </button>
-                <button type="submit" className="px-4 py-2 bg-[#4A3E2A] text-white rounded-lg text-xs font-bold hover:bg-zinc-800">
+                <button type="submit" className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded-lg text-xs font-bold hover:bg-[#B6CCFE]">
                   Save Changes
                 </button>
               </div>
@@ -1080,7 +1080,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       {/* 4. Preview Learner Roadmap Modal */}
       {activeModal === 'preview' && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl border border-[#E8E3DA]">
+          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl border border-[#D7E3FC]">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
               <div>
                 <h3 className="text-base font-extrabold text-zinc-900">Preview Learner Roadmap Trajectory</h3>
@@ -1093,9 +1093,9 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
 
             <div className="space-y-3 text-xs">
               {editableItems.map(item => (
-                <div key={item.id} className="p-3 bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl flex items-center justify-between">
+                <div key={item.id} className="p-3 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] font-bold text-[#4A3E2A] bg-[#EBE6DD] px-2 py-0.5 rounded">Week {item.week_number}</span>
+                    <span className="text-[10px] font-bold text-[#22223B] bg-[#EDF2FB] px-2 py-0.5 rounded">Week {item.week_number}</span>
                     <h4 className="font-bold text-zinc-900 mt-1">{item.title}</h4>
                     <p className="text-[11px] text-zinc-500">{item.reason_explanation}</p>
                   </div>
@@ -1107,7 +1107,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
             </div>
 
             <div className="pt-2 text-right">
-              <button onClick={() => setActiveModal(null)} className="px-4 py-2 bg-zinc-900 text-white rounded-lg text-xs font-semibold">
+              <button onClick={() => setActiveModal(null)} className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded-lg text-xs font-semibold">
                 Close Preview
               </button>
             </div>
@@ -1118,7 +1118,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       {/* 5. Compare with Default Plan Modal */}
       {activeModal === 'compare' && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-3xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl border border-[#E8E3DA]">
+          <div className="bg-white rounded-2xl max-w-3xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl border border-[#D7E3FC]">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
               <div>
                 <h3 className="text-base font-extrabold text-zinc-900">Plan Comparison: Standard DAG vs Custom Override</h3>
@@ -1143,12 +1143,12 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
               </div>
 
               <div className="p-4 bg-amber-50/50 border border-amber-200 rounded-xl space-y-2">
-                <h4 className="font-bold text-[#4A3E2A] border-b border-amber-200 pb-1">Trainer Overridden Plan</h4>
+                <h4 className="font-bold text-[#22223B] border-b border-amber-200 pb-1">Trainer Overridden Plan</h4>
                 <p className="text-amber-800 text-[11px]">Human-in-the-loop customized hours & fast-tracked nodes.</p>
                 <div className="space-y-1.5 pt-2">
                   {editableItems.slice(0, 4).map(item => (
                     <div key={item.id} className="p-2 bg-white rounded border border-amber-300 text-[11px]">
-                      <span className="font-bold text-[#4A3E2A]">{item.title}</span> &bull; <span className="capitalize font-semibold">{item.status ? item.status.replace('_', ' ') : 'customized'}</span>
+                      <span className="font-bold text-[#22223B]">{item.title}</span> &bull; <span className="capitalize font-semibold">{item.status ? item.status.replace('_', ' ') : 'customized'}</span>
                     </div>
                   ))}
                 </div>
@@ -1156,7 +1156,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
             </div>
 
             <div className="pt-2 text-right">
-              <button onClick={() => setActiveModal(null)} className="px-4 py-2 bg-zinc-900 text-white rounded-lg text-xs font-semibold">
+              <button onClick={() => setActiveModal(null)} className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded-lg text-xs font-semibold">
                 Done Comparing
               </button>
             </div>
@@ -1167,7 +1167,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       {/* 6. View Audit History Modal */}
       {activeModal === 'audit' && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl border border-[#E8E3DA]">
+          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl border border-[#D7E3FC]">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
               <div>
                 <h3 className="text-base font-extrabold text-zinc-900">Roadmap Audit & Change Log History</h3>
@@ -1190,14 +1190,14 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
                   </div>
                 ))
               ) : (
-                <div className="p-4 text-center text-zinc-500 bg-[#FAF8F5] rounded-xl border">
+                <div className="p-4 text-center text-zinc-500 bg-[#EDF2FB] rounded-xl border">
                   Audit log record: Roadmap override initialized by Dr. Rajesh Kumar.
                 </div>
               )}
             </div>
 
             <div className="pt-2 text-right">
-              <button onClick={() => setActiveModal(null)} className="px-4 py-2 bg-zinc-900 text-white rounded-lg text-xs font-semibold">
+              <button onClick={() => setActiveModal(null)} className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded-lg text-xs font-semibold">
                 Close Audit Log
               </button>
             </div>
@@ -1208,7 +1208,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
       {/* 7. Notify Learner Modal */}
       {activeModal === 'notify' && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-[#E8E3DA]">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-[#D7E3FC]">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
               <div>
                 <h3 className="text-base font-extrabold text-zinc-900">Notify Learner</h3>
@@ -1236,7 +1236,7 @@ export default function RoadmapOverridePanel({ preselectedTraineeId, preselected
               <button 
                 onClick={handleSendNotification}
                 disabled={sendingNotify}
-                className="px-4 py-2 bg-[#4A3E2A] text-white rounded-lg text-xs font-semibold hover:bg-zinc-800"
+                className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded-lg text-xs font-semibold hover:bg-[#B6CCFE]"
               >
                 {sendingNotify ? 'Sending...' : 'Send Notification'}
               </button>

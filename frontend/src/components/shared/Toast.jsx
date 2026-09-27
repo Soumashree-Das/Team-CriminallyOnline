@@ -15,7 +15,7 @@ export default function Toast({ message, type = 'success', onClose, duration = 3
   const isSuccess = type === 'success';
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex items-center space-x-2 px-4 py-3 rounded-xl shadow-lg border text-xs font-semibold animate-in slide-in-from-bottom-5 duration-200 bg-white border-[#E5E5E2] text-gray-900">
+    <div className="fixed bottom-5 right-5 z-50 flex items-center space-x-2 px-4 py-3 rounded-xl shadow-lg border text-xs font-semibold animate-in slide-in-from-bottom-5 duration-200 bg-white border-[#D7E3FC] text-gray-900">
       {isSuccess ? (
         <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
       ) : (

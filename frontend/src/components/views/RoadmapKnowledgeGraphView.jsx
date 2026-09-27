@@ -41,7 +41,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
   if (loading) {
     return (
       <div className="p-12 text-center text-gray-500">
-        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#174A7E]" />
+        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#22223B]" />
         <p className="text-sm font-medium">Executing Dynamic Replanner & Knowledge Graph Engine...</p>
       </div>
     );
@@ -177,11 +177,11 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
     <div className="space-y-6">
       
       {/* View Header & SubTab Switcher */}
-      <div className="inst-card p-5 bg-white border border-[#E5E5E2] rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="inst-card p-5 bg-white border border-[#D7E3FC] rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center space-x-2">
             <h1 className="text-xl font-bold text-gray-900">Dynamic AI/ML Learning Trajectory</h1>
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-[#EAF2F8] text-[#174A7E] border border-blue-200">
+            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-[#EDF2FB] text-[#22223B] border border-blue-200">
               <Database className="w-3 h-3 mr-1" /> Neo4j KG Connected
             </span>
           </div>
@@ -189,11 +189,11 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
         </div>
 
         {/* View Switcher Pills */}
-        <div className="flex bg-[#F7F7F5] p-1 rounded-lg border border-[#E5E5E2] text-xs font-semibold">
+        <div className="flex bg-[#EDF2FB] p-1 rounded-lg border border-[#D7E3FC] text-xs font-semibold">
           <button
             onClick={() => setActiveSubTab('roadmap')}
             className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-md transition-colors ${
-              activeSubTab === 'roadmap' ? 'bg-[#174A7E] text-white shadow-sm' : 'text-gray-600 hover:text-gray-900'
+              activeSubTab === 'roadmap' ? 'bg-[#ABC4FF] text-[#22223B] shadow-sm' : 'text-gray-600 hover:text-gray-900'
             }`}
           >
             <Map className="w-3.5 h-3.5" />
@@ -203,7 +203,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
           <button
             onClick={() => setActiveSubTab('kg')}
             className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-md transition-colors ${
-              activeSubTab === 'kg' ? 'bg-[#174A7E] text-white shadow-sm' : 'text-gray-600 hover:text-gray-900'
+              activeSubTab === 'kg' ? 'bg-[#ABC4FF] text-[#22223B] shadow-sm' : 'text-gray-600 hover:text-gray-900'
             }`}
           >
             <Network className="w-3.5 h-3.5" />
@@ -217,10 +217,10 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
         <div className="space-y-6">
           
           {/* Roadmap Info Card */}
-          <div className="inst-card p-5 bg-white border border-[#E5E5E2] rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="inst-card p-5 bg-white border border-[#D7E3FC] rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="space-y-1">
               <div className="flex items-center space-x-2">
-                <span className="text-xs font-bold text-[#174A7E] bg-[#EAF2F8] px-2 py-0.5 rounded">AIML-02</span>
+                <span className="text-xs font-bold text-[#22223B] bg-[#EDF2FB] px-2 py-0.5 rounded">AIML-02</span>
                 <h2 className="text-base font-bold text-gray-900">Constraint-Aware Replanned Sequence (Max 8 Steps)</h2>
                 {roadmapData?.is_trainer_overridden && (
                   <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-800 border border-purple-200">
@@ -229,7 +229,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                 )}
               </div>
               <p className="text-xs text-gray-600">
-                Weekly Capacity: <span className="font-semibold text-gray-800">{roadmapData?.weekly_capacity_hours || 14} hrs/week</span> &bull; Estimated Completion: <span className="font-bold text-[#174A7E]">{roadmapData?.estimated_completion_date || '18 October 2026'}</span>
+                Weekly Capacity: <span className="font-semibold text-gray-800">{roadmapData?.weekly_capacity_hours || 14} hrs/week</span> &bull; Estimated Completion: <span className="font-bold text-[#22223B]">{roadmapData?.estimated_completion_date || '18 October 2026'}</span>
               </p>
             </div>
 
@@ -249,10 +249,10 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
           <div className="inst-card p-5 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border border-blue-200 rounded-xl space-y-2.5 text-xs text-blue-950 shadow-xs">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <Sparkles className="w-4 h-4 text-[#174A7E]" />
+                <Sparkles className="w-4 h-4 text-[#22223B]" />
                 <h3 className="font-bold text-gray-900 text-sm">Why this personalized sequence? (Gemini RAG Grounded Rationale)</h3>
               </div>
-              <span className="text-[10px] font-semibold text-[#174A7E] bg-white px-2 py-0.5 rounded border border-blue-200">
+              <span className="text-[10px] font-semibold text-[#22223B] bg-white px-2 py-0.5 rounded border border-blue-200">
                 Grounding Engine: KG Facts + Gemini LLM
               </span>
             </div>
@@ -268,7 +268,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
             {Object.keys(groupedRoadmap).map((weekNum) => (
               <div key={weekNum} className="space-y-3">
                 <div className="flex items-center space-x-2 text-xs font-bold text-gray-700 border-b border-gray-200 pb-1">
-                  <span className="bg-[#174A7E] text-white px-2 py-0.5 rounded text-[11px]">Week {weekNum}</span>
+                  <span className="bg-[#ABC4FF] text-[#22223B] px-2 py-0.5 rounded text-[11px]">Week {weekNum}</span>
                   <span>Scheduled Learning Modules</span>
                 </div>
 
@@ -292,7 +292,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                     }
 
                     return (
-                      <div key={item.id || item.concept_id} className="inst-card p-4 rounded-lg space-y-2.5 flex flex-col justify-between bg-white border border-[#E5E5E2] hover:border-[#174A7E] transition-all">
+                      <div key={item.id || item.concept_id} className="inst-card p-4 rounded-lg space-y-2.5 flex flex-col justify-between bg-white border border-[#D7E3FC] hover:border-[#22223B] transition-all">
                         <div className="space-y-1">
                           <div className="flex items-center justify-between gap-2">
                             <span className={`text-[10px] font-semibold px-2 py-0.5 rounded border ${priorityBadge}`}>
@@ -306,7 +306,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                         </div>
 
                         <div className="pt-2 border-t border-gray-100 text-[11px] text-gray-600 flex items-start space-x-1.5">
-                          <HelpCircle className="w-3.5 h-3.5 text-[#174A7E] shrink-0 mt-0.5" />
+                          <HelpCircle className="w-3.5 h-3.5 text-[#22223B] shrink-0 mt-0.5" />
                           <span className="leading-snug">{item.reason_explanation}</span>
                         </div>
                       </div>
@@ -325,7 +325,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
           {/* Left Side (2 Cols): Interactive SVG DAG Graph Canvas */}
-          <div className="lg:col-span-2 inst-card p-5 bg-white border border-[#E5E5E2] rounded-xl space-y-4 flex flex-col">
+          <div className="lg:col-span-2 inst-card p-5 bg-white border border-[#D7E3FC] rounded-xl space-y-4 flex flex-col">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 pb-3 gap-2">
               <div>
                 <h2 className="text-sm font-bold text-gray-900">AI/ML Competency DAG Knowledge Graph</h2>
@@ -333,7 +333,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
               </div>
 
               {/* Dynamic Outer Ring Mastery Legend */}
-              <div className="flex flex-wrap items-center gap-2.5 text-[10px] font-medium bg-[#F7F7F5] px-3 py-1.5 rounded-lg border border-gray-200">
+              <div className="flex flex-wrap items-center gap-2.5 text-[10px] font-medium bg-[#EDF2FB] px-3 py-1.5 rounded-lg border border-gray-200">
                 <span className="flex items-center"><span className="w-3 h-3 rounded-full border-2 border-[#22C55E] bg-white mr-1"></span> Good (&ge; 75%)</span>
                 <span className="flex items-center"><span className="w-3 h-3 rounded-full border-2 border-[#F59E0B] bg-white mr-1"></span> Okayish (50-74%)</span>
                 <span className="flex items-center"><span className="w-3 h-3 rounded-full border-2 border-[#EF4444] bg-white mr-1"></span> Bad (&lt; 50%)</span>
@@ -381,7 +381,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                     markerHeight="7"
                     orient="auto-start-reverse"
                   >
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#174A7E" />
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#22223B" />
                   </marker>
                 </defs>
 
@@ -400,7 +400,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                   let opacity = "0.7";
 
                   if (isFocused) {
-                    strokeColor = '#174A7E';
+                    strokeColor = '#22223B';
                     markerId = 'url(#arrow-focus)';
                     strokeWidth = "3.5";
                     opacity = "1";
@@ -440,7 +440,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                   // Inner node background color
                   let innerFill = '#FFFFFF';
                   if (node.status === 'forgotten') innerFill = '#F3E8FF';
-                  else if (node.status === 'blocked') innerFill = '#F3F4F6';
+                  else if (node.status === 'blocked') innerFill = '#EDF2FB';
 
                   const shortCode = node.code ? node.code.split('-').pop() : `C${node.id}`;
 
@@ -458,7 +458,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
 
                       {/* Selection Highlight Ring */}
                       {isSelected && (
-                        <circle r="32" fill="none" stroke="#174A7E" strokeWidth="3" strokeDasharray="4,4" />
+                        <circle r="32" fill="none" stroke="#22223B" strokeWidth="3" strokeDasharray="4,4" />
                       )}
 
                       {/* DYNAMIC OUTER RING (Color changes according to mastery score) */}
@@ -476,7 +476,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                         y="-3"
                         textAnchor="middle"
                         dominantBaseline="central"
-                        className={`text-[10px] font-extrabold ${isFocus ? 'fill-[#174A7E]' : 'fill-slate-800'}`}
+                        className={`text-[10px] font-extrabold ${isFocus ? 'fill-[#22223B]' : 'fill-slate-800'}`}
                       >
                         {shortCode}
                       </text>
@@ -497,7 +497,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                         x="0"
                         y="36"
                         textAnchor="middle"
-                        className={`text-[10px] ${isFocus ? 'font-extrabold fill-[#174A7E]' : 'font-semibold fill-slate-700'} pointer-events-none`}
+                        className={`text-[10px] ${isFocus ? 'font-extrabold fill-[#22223B]' : 'font-semibold fill-slate-700'} pointer-events-none`}
                       >
                         {node.title.length > 20 ? `${node.title.substring(0, 18)}...` : node.title}
                       </text>
@@ -510,7 +510,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
           </div>
 
           {/* Right Side (1 Col): Node Inspector Panel */}
-          <div className="inst-card p-5 bg-[#F7F7F5] border border-[#E5E5E2] rounded-xl space-y-4">
+          <div className="inst-card p-5 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl space-y-4">
             <h3 className="text-sm font-bold text-gray-900 border-b border-gray-200 pb-2 flex items-center justify-between">
               <span>Concept Inspector Panel</span>
               <span className="text-[10px] font-normal text-gray-500">Click graph node to inspect</span>
@@ -520,7 +520,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
               <div className="space-y-4 text-xs">
                 <div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-[10px] font-bold text-[#174A7E] uppercase bg-[#EAF2F8] px-2 py-0.5 rounded">
+                    <span className="text-[10px] font-bold text-[#22223B] uppercase bg-[#EDF2FB] px-2 py-0.5 rounded">
                       {selectedNode.code}
                     </span>
                     <span
@@ -534,10 +534,10 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
                 </div>
 
                 {/* Outer Ring Mastery Indicator Badge */}
-                <div className="p-3 bg-white rounded-lg border border-[#E5E5E2] space-y-2">
+                <div className="p-3 bg-white rounded-lg border border-[#D7E3FC] space-y-2">
                   <div className="flex justify-between text-xs font-semibold">
                     <span>Evaluated Mastery Score</span>
-                    <span className="text-[#174A7E] font-bold">{selectedNode.mastery_score}%</span>
+                    <span className="text-[#22223B] font-bold">{selectedNode.mastery_score}%</span>
                   </div>
 
                   <div className="w-full bg-gray-200 h-2.5 rounded-full overflow-hidden">
@@ -584,7 +584,7 @@ export default function RoadmapKnowledgeGraphView({ onNavigate }) {
 
                 <button
                   onClick={() => onNavigate('lesson')}
-                  className="w-full py-2.5 bg-[#174A7E] hover:bg-[#12395F] text-white font-semibold rounded-lg transition-colors flex items-center justify-center space-x-1.5 shadow-xs"
+                  className="w-full py-2.5 bg-[#ABC4FF] hover:bg-[#B6CCFE] text-[#22223B] font-semibold rounded-lg transition-colors flex items-center justify-center space-x-1.5 shadow-xs"
                 >
                   <span>Launch Concept Lesson</span>
                   <ArrowRight className="w-4 h-4" />

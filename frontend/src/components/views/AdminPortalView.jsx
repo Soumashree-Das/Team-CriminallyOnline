@@ -244,24 +244,24 @@ export default function AdminPortalView() {
   };
 
   return (
-    <div className="w-full h-full min-h-0 flex flex-col overflow-y-auto space-y-4 bg-[#FAF8F5] p-2 sm:p-4">
+    <div className="w-full h-full min-h-0 flex flex-col overflow-y-auto space-y-4 bg-[#EDF2FB] p-2 sm:p-4">
       
       {/* Toast Notification */}
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
 
       {/* Header Banner Card */}
-      <div className="shrink-0 bg-[#0D2743] border border-[#174A7E] text-white rounded-2xl p-5 shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative overflow-hidden">
+      <div className="glass-panel shrink-0 bg-white border border-[#ABC4FF] text-[#22223B] rounded-2xl p-5 shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative overflow-hidden">
         <div className="relative z-10">
-          <div className="inline-flex items-center space-x-1.5 bg-[#174A7E] text-amber-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-blue-400 mb-1">
+          <div className="inline-flex items-center space-x-1.5 bg-[#ABC4FF] text-[#22223B] text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-blue-400 mb-1">
             <Shield className="w-3.5 h-3.5" />
             <span>Anti-Corruption Executive Governance</span>
           </div>
-          <h1 className="text-xl font-extrabold tracking-tight text-white">Capacity Connect Platform Admin Portal</h1>
+          <h1 className="text-xl font-extrabold tracking-tight text-[#22223B]">Capacity Connect Platform Admin Portal</h1>
           <p className="text-xs text-blue-200 mt-0.5">Tiered Access Control &bull; Maker-Checker Approvals &bull; SHA-256 Tamper-Evident Audit Chains</p>
         </div>
 
         {/* Navigation Tabs Bar */}
-        <div className="relative z-10 flex flex-wrap items-center gap-1.5 bg-[#12395F] p-1.5 rounded-xl border border-blue-900/60">
+        <div className="relative z-10 flex flex-wrap items-center gap-1.5 bg-[#EDF2FB] p-1.5 rounded-xl border border-[#D7E3FC]">
           {[
             { id: 'overview', label: 'Overview', icon: Activity },
             { id: 'users', label: 'User Directory', icon: Users },
@@ -277,7 +277,7 @@ export default function AdminPortalView() {
                 key={tab.id}
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 ${
-                  isActive ? 'bg-amber-400 text-zinc-900 shadow-sm' : 'text-blue-200 hover:bg-[#174A7E] hover:text-white'
+                  isActive ? 'bg-[#ABC4FF] text-[#22223B] shadow-sm' : 'text-[#22223B]/70 hover:bg-white hover:text-[#22223B]'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -296,15 +296,15 @@ export default function AdminPortalView() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div 
               onClick={() => setActiveSubTab('users')}
-              className="bg-white border border-[#E5E5E2] rounded-xl p-4 shadow-xs text-center cursor-pointer hover:border-[#174A7E] transition-all"
+              className="bg-white border border-[#D7E3FC] rounded-xl p-4 shadow-xs text-center cursor-pointer hover:border-[#22223B] transition-all"
             >
               <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Total Trainees</p>
-              <p className="text-2xl font-black text-[#174A7E] mt-1">{kpiData?.total_trainees ?? 5}</p>
+              <p className="text-2xl font-black text-[#22223B] mt-1">{kpiData?.total_trainees ?? 5}</p>
               <p className="text-[10px] font-bold text-gray-400 mt-0.5">View Directory &rarr;</p>
             </div>
             <div 
               onClick={() => setActiveSubTab('users')}
-              className="bg-white border border-[#E5E5E2] rounded-xl p-4 shadow-xs text-center cursor-pointer hover:border-[#174A7E] transition-all"
+              className="bg-white border border-[#D7E3FC] rounded-xl p-4 shadow-xs text-center cursor-pointer hover:border-[#22223B] transition-all"
             >
               <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Authorized Trainers</p>
               <p className="text-2xl font-black text-gray-900 mt-1">{kpiData?.total_trainers ?? 1}</p>
@@ -312,15 +312,15 @@ export default function AdminPortalView() {
             </div>
             <div 
               onClick={() => setActiveSubTab('approvals')}
-              className="bg-white border border-[#E5E5E2] rounded-xl p-4 shadow-xs text-center cursor-pointer hover:border-[#174A7E] transition-all"
+              className="bg-white border border-[#D7E3FC] rounded-xl p-4 shadow-xs text-center cursor-pointer hover:border-[#22223B] transition-all"
             >
               <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Active Enrollments</p>
-              <p className="text-2xl font-black text-[#174A7E] mt-1">{kpiData?.active_enrollments ?? 4}</p>
+              <p className="text-2xl font-black text-[#22223B] mt-1">{kpiData?.active_enrollments ?? 4}</p>
               <p className="text-[10px] font-bold text-amber-700 mt-0.5">View Approvals &rarr;</p>
             </div>
             <div 
               onClick={() => setActiveSubTab('audit')}
-              className="bg-white border border-[#E5E5E2] rounded-xl p-4 shadow-xs text-center cursor-pointer hover:border-emerald-500 transition-all"
+              className="bg-white border border-[#D7E3FC] rounded-xl p-4 shadow-xs text-center cursor-pointer hover:border-emerald-500 transition-all"
             >
               <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Certificates Issued</p>
               <p className="text-2xl font-black text-emerald-700 mt-1">{kpiData?.certificates_issued ?? 1}</p>
@@ -329,16 +329,16 @@ export default function AdminPortalView() {
           </div>
 
           {/* Real Platform Competency Knowledge Graph Card */}
-          <div className="bg-white border border-[#E5E5E2] rounded-2xl p-5 shadow-sm space-y-4">
+          <div className="bg-white border border-[#D7E3FC] rounded-2xl p-5 shadow-sm space-y-4">
             <div className="flex justify-between items-center border-b border-gray-100 pb-3">
               <div>
                 <h3 className="font-extrabold text-sm text-gray-900 flex items-center space-x-2">
-                  <Network className="w-4 h-4 text-[#174A7E]" />
+                  <Network className="w-4 h-4 text-[#22223B]" />
                   <span>Platform Competency Health Across AI/ML Courses</span>
                 </h3>
                 <p className="text-xs text-gray-500 mt-0.5">Live platform aggregate calculated from real DB mastery states</p>
               </div>
-              <span className="text-xs font-bold text-[#174A7E] bg-[#EAF2F8] px-2.5 py-1 rounded-lg">
+              <span className="text-xs font-bold text-[#22223B] bg-[#EDF2FB] px-2.5 py-1 rounded-lg">
                 Total Platform Trainees: {kgAdminData?.total_trainees_platform ?? 5}
               </span>
             </div>
@@ -346,9 +346,9 @@ export default function AdminPortalView() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               {kgAdminData?.platform_competencies ? (
                 kgAdminData.platform_competencies.map(c => (
-                  <div key={c.course_id} className="p-3.5 bg-[#FAF8F5] border border-[#E5E5E2] rounded-xl flex items-center justify-between">
+                  <div key={c.course_id} className="p-3.5 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl flex items-center justify-between">
                     <div>
-                      <span className="font-bold text-[#174A7E] bg-blue-50 px-2 py-0.5 rounded font-mono">{c.code}</span>
+                      <span className="font-bold text-[#22223B] bg-blue-50 px-2 py-0.5 rounded font-mono">{c.code}</span>
                       <h4 className="font-bold text-gray-900 mt-1">{c.title}</h4>
                       <p className="text-[11px] text-gray-500">{c.concept_count} Concept Modules</p>
                     </div>
@@ -369,7 +369,7 @@ export default function AdminPortalView() {
 
       {/* --- SUB TAB 2: USER DIRECTORY & ACCOUNT MANAGEMENT --- */}
       {activeSubTab === 'users' && (
-        <div className="bg-white border border-[#E5E5E2] rounded-2xl p-5 shadow-sm space-y-4">
+        <div className="bg-white border border-[#D7E3FC] rounded-2xl p-5 shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-gray-100 pb-3">
             <div>
               <h3 className="font-extrabold text-sm text-gray-900">Platform User Directory & Governance</h3>
@@ -385,14 +385,14 @@ export default function AdminPortalView() {
                   placeholder="Search user name/email..."
                   value={userSearch}
                   onChange={(e) => setUserSearch(e.target.value)}
-                  className="pl-8 pr-3 py-1.5 bg-[#FAF8F5] border border-gray-300 rounded-lg text-xs font-semibold w-48 focus:outline-none focus:border-[#174A7E]"
+                  className="pl-8 pr-3 py-1.5 bg-[#EDF2FB] border border-gray-300 rounded-lg text-xs font-semibold w-48 focus:outline-none focus:border-[#22223B]"
                 />
               </div>
 
               <select
                 value={roleFilter}
                 onChange={(e) => setRoleFilter(e.target.value)}
-                className="p-1.5 bg-[#FAF8F5] border border-gray-300 rounded-lg text-xs font-semibold focus:outline-none"
+                className="p-1.5 bg-[#EDF2FB] border border-gray-300 rounded-lg text-xs font-semibold focus:outline-none"
               >
                 <option value="all">All Roles</option>
                 <option value="trainee">Trainees</option>
@@ -403,7 +403,7 @@ export default function AdminPortalView() {
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="p-1.5 bg-[#FAF8F5] border border-gray-300 rounded-lg text-xs font-semibold focus:outline-none"
+                className="p-1.5 bg-[#EDF2FB] border border-gray-300 rounded-lg text-xs font-semibold focus:outline-none"
               >
                 <option value="all">All Status</option>
                 <option value="active">Active</option>
@@ -413,9 +413,9 @@ export default function AdminPortalView() {
           </div>
 
           {/* User Directory Table */}
-          <div className="overflow-x-auto border border-[#E5E5E2] rounded-xl">
+          <div className="overflow-x-auto border border-[#D7E3FC] rounded-xl">
             <table className="w-full text-left text-xs border-collapse">
-              <thead className="bg-[#FAF8F5] border-b border-[#E5E5E2] text-gray-700 font-bold uppercase tracking-wider text-[10px]">
+              <thead className="bg-[#EDF2FB] border-b border-[#D7E3FC] text-gray-700 font-bold uppercase tracking-wider text-[10px]">
                 <tr>
                   <th className="p-3">USER ID</th>
                   <th className="p-3">FULL NAME & EMAIL</th>
@@ -434,7 +434,7 @@ export default function AdminPortalView() {
                       <p className="text-[11px] font-normal text-gray-500">{u.email}</p>
                     </td>
                     <td className="p-3">
-                      <span className="font-bold text-[#174A7E] uppercase bg-blue-50 px-2 py-0.5 rounded text-[10px]">
+                      <span className="font-bold text-[#22223B] uppercase bg-blue-50 px-2 py-0.5 rounded text-[10px]">
                         {u.role} ({u.admin_tier})
                       </span>
                     </td>
@@ -473,8 +473,8 @@ export default function AdminPortalView() {
 
       {/* --- SUB TAB 3: ELEVATED SENSITIVE PII ACCESS (TIER 2) --- */}
       {activeSubTab === 'pii' && (
-        <div className="bg-white border border-[#E5E5E2] rounded-2xl p-5 shadow-sm space-y-4">
-          <div className="flex items-center space-x-2 text-[#174A7E] border-b border-gray-100 pb-3">
+        <div className="bg-white border border-[#D7E3FC] rounded-2xl p-5 shadow-sm space-y-4">
+          <div className="flex items-center space-x-2 text-[#22223B] border-b border-gray-100 pb-3">
             <Lock className="w-5 h-5" />
             <div>
               <h3 className="font-extrabold text-sm text-gray-900">Elevated PII Access Studio (Tier 2)</h3>
@@ -485,7 +485,7 @@ export default function AdminPortalView() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
             
             {/* Step 1: Verification Form Card */}
-            <div className="p-4 bg-[#FAF8F5] border border-[#E5E5E2] rounded-xl space-y-3">
+            <div className="p-4 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl space-y-3">
               <h4 className="font-bold text-gray-900 border-b border-gray-200 pb-1">1. Target Learner & Audit Justification</h4>
 
               {errorMsg && (
@@ -515,17 +515,17 @@ export default function AdminPortalView() {
                   value={piiReason}
                   onChange={(e) => setPiiReason(e.target.value)}
                   placeholder="e.g. Legal identity verification for SIH Hackathon certificate..."
-                  className="w-full p-2 bg-white border border-gray-300 rounded-lg text-xs text-gray-900 focus:outline-none focus:border-[#174A7E]"
+                  className="w-full p-2 bg-white border border-gray-300 rounded-lg text-xs text-gray-900 focus:outline-none focus:border-[#22223B]"
                 />
               </div>
 
               {/* OTP Generation Banner */}
               <div className="p-3 bg-blue-50/70 border border-blue-200 rounded-xl space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="font-bold text-[#174A7E]">Security OTP Challenge</span>
+                  <span className="font-bold text-[#22223B]">Security OTP Challenge</span>
                   <button
                     onClick={handleRequestOtp}
-                    className="px-2.5 py-1 bg-[#174A7E] text-white font-bold rounded text-[11px] hover:bg-[#12395F]"
+                    className="px-2.5 py-1 bg-[#ABC4FF] text-[#22223B] font-bold rounded text-[11px] hover:bg-[#B6CCFE]"
                   >
                     Generate OTP Challenge
                   </button>
@@ -545,20 +545,20 @@ export default function AdminPortalView() {
                   value={otpInput}
                   onChange={(e) => setOtpInput(e.target.value)}
                   placeholder="e.g. 849201"
-                  className="w-full p-2 bg-white border border-gray-300 rounded-lg font-mono font-bold text-center text-sm text-gray-900 focus:outline-none focus:border-[#174A7E]"
+                  className="w-full p-2 bg-white border border-gray-300 rounded-lg font-mono font-bold text-center text-sm text-gray-900 focus:outline-none focus:border-[#22223B]"
                 />
               </div>
 
               <button
                 onClick={handleVerifyAndGrantPii}
-                className="w-full py-2.5 bg-[#174A7E] hover:bg-[#12395F] text-white font-bold rounded-xl text-xs shadow-sm"
+                className="w-full py-2.5 bg-[#ABC4FF] hover:bg-[#B6CCFE] text-[#22223B] font-bold rounded-xl text-xs shadow-sm"
               >
                 Verify OTP & Grant Time-Boxed Access
               </button>
             </div>
 
             {/* Step 2: Live Unmasked Result Card */}
-            <div className="p-4 bg-white border border-[#E5E5E2] rounded-xl flex flex-col justify-between space-y-3">
+            <div className="p-4 bg-white border border-[#D7E3FC] rounded-xl flex flex-col justify-between space-y-3">
               <div>
                 <div className="flex justify-between items-center border-b border-gray-100 pb-2">
                   <h4 className="font-bold text-gray-900">2. Time-Boxed Unmasked PII Display</h4>
@@ -596,7 +596,7 @@ export default function AdminPortalView() {
 
       {/* --- SUB TAB 4: MAKER-CHECKER APPROVAL QUEUE --- */}
       {activeSubTab === 'approvals' && (
-        <div className="bg-white border border-[#E5E5E2] rounded-2xl p-5 shadow-sm space-y-4">
+        <div className="bg-white border border-[#D7E3FC] rounded-2xl p-5 shadow-sm space-y-4">
           <div className="flex justify-between items-center border-b border-gray-100 pb-3">
             <div>
               <h3 className="font-extrabold text-sm text-gray-900">Maker-Checker Approval Queue</h3>
@@ -610,11 +610,11 @@ export default function AdminPortalView() {
           <div className="space-y-3 text-xs">
             {approvals.length > 0 ? (
               approvals.map(req => (
-                <div key={req.id} className="p-4 bg-[#FAF8F5] border border-[#E5E5E2] rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                <div key={req.id} className="p-4 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                   <div className="space-y-1">
                     <div className="flex items-center space-x-2">
                       <span className="font-mono font-bold text-gray-600">#{req.id}</span>
-                      <span className="font-bold text-[#174A7E] bg-blue-50 px-2 py-0.5 rounded uppercase text-[10px]">
+                      <span className="font-bold text-[#22223B] bg-blue-50 px-2 py-0.5 rounded uppercase text-[10px]">
                         {req.action_type}
                       </span>
                       <span className="text-gray-500 font-semibold">&bull; Requested by {req.requester_name}</span>
@@ -632,7 +632,7 @@ export default function AdminPortalView() {
                     </button>
                     <button
                       onClick={() => handleApprovalDecision(req.id, true)}
-                      className="px-3.5 py-1.5 bg-[#174A7E] text-white font-bold rounded-lg hover:bg-[#12395F]"
+                      className="px-3.5 py-1.5 bg-[#ABC4FF] text-[#22223B] font-bold rounded-lg hover:bg-[#B6CCFE]"
                     >
                       Approve
                     </button>
@@ -652,11 +652,11 @@ export default function AdminPortalView() {
 
       {/* --- SUB TAB 5: AUDIT LOG EXPLORER (HASH CHAINED) --- */}
       {activeSubTab === 'audit' && (
-        <div className="bg-white border border-[#E5E5E2] rounded-2xl p-5 shadow-sm space-y-4">
+        <div className="bg-white border border-[#D7E3FC] rounded-2xl p-5 shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-gray-100 pb-3">
             <div>
               <div className="flex items-center space-x-2">
-                <History className="w-5 h-5 text-[#174A7E]" />
+                <History className="w-5 h-5 text-[#22223B]" />
                 <h3 className="font-extrabold text-sm text-gray-900">Immutable Audit Log Explorer</h3>
               </div>
               <p className="text-xs text-gray-500">Every admin mutation and PII unmask is cryptographic hash-chained (SHA-256).</p>
@@ -675,9 +675,9 @@ export default function AdminPortalView() {
             )}
           </div>
 
-          <div className="overflow-x-auto border border-[#E5E5E2] rounded-xl">
+          <div className="overflow-x-auto border border-[#D7E3FC] rounded-xl">
             <table className="w-full text-left text-xs border-collapse">
-              <thead className="bg-[#FAF8F5] border-b border-[#E5E5E2] text-gray-700 font-bold uppercase tracking-wider text-[10px]">
+              <thead className="bg-[#EDF2FB] border-b border-[#D7E3FC] text-gray-700 font-bold uppercase tracking-wider text-[10px]">
                 <tr>
                   <th className="p-3">LOG ID</th>
                   <th className="p-3">ADMIN PERFORMER</th>
@@ -693,7 +693,7 @@ export default function AdminPortalView() {
                     <td className="p-3 font-mono font-bold text-gray-600">#{l.log_id}</td>
                     <td className="p-3 font-bold text-gray-900">{l.admin_name}</td>
                     <td className="p-3">
-                      <span className="font-bold text-[#174A7E] bg-blue-50 px-2 py-0.5 rounded text-[10px]">
+                      <span className="font-bold text-[#22223B] bg-blue-50 px-2 py-0.5 rounded text-[10px]">
                         {l.action_type}
                       </span>
                     </td>
@@ -710,7 +710,7 @@ export default function AdminPortalView() {
 
       {/* --- SUB TAB 6: ANOMALY & INTEGRITY DASHBOARD --- */}
       {activeSubTab === 'anomalies' && (
-        <div className="bg-white border border-[#E5E5E2] rounded-2xl p-5 shadow-sm space-y-4">
+        <div className="bg-white border border-[#D7E3FC] rounded-2xl p-5 shadow-sm space-y-4">
           <div className="flex justify-between items-center border-b border-gray-100 pb-3">
             <div>
               <h3 className="font-extrabold text-sm text-gray-900 flex items-center space-x-2">
@@ -744,7 +744,7 @@ export default function AdminPortalView() {
       {/* DEACTIVATION REASON MODAL */}
       {deactivateModalUser && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-[#E5E5E2]">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-[#D7E3FC]">
             <div className="flex justify-between items-center border-b border-gray-100 pb-2">
               <h3 className="font-extrabold text-base text-gray-900">Deactivate User Account</h3>
               <button onClick={() => setDeactivateModalUser(null)} className="p-1 rounded bg-gray-100">✕</button>
@@ -761,7 +761,7 @@ export default function AdminPortalView() {
                 value={deactivateReason}
                 onChange={(e) => setDeactivateReason(e.target.value)}
                 placeholder="e.g. Disciplinary suspension / Institutional request..."
-                className="w-full p-3 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-[#174A7E]"
+                className="w-full p-3 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-[#22223B]"
               />
             </div>
 

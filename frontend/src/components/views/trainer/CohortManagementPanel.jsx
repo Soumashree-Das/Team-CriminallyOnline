@@ -118,18 +118,18 @@ export default function CohortManagementPanel() {
   };
 
   return (
-    <div className="h-full w-full min-h-0 flex flex-col overflow-hidden space-y-3 bg-[#F4F1EA]">
+    <div className="h-full w-full min-h-0 flex flex-col overflow-hidden space-y-3 bg-[#EDF2FB]">
       {toast && <Toast type={toast.type} message={toast.message} onClose={() => setToast(null)} />}
 
       {/* Header & Course Filter Bar Hero */}
-      <div className="shrink-0 bg-[#EBE6DD] border border-[#DDD5C7] rounded-2xl p-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div className="shrink-0 bg-[#EDF2FB] border border-[#D7E3FC] rounded-2xl p-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
         <div>
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg bg-[#4A3E2A] text-amber-200 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#ABC4FF] text-[#22223B] flex items-center justify-center shrink-0">
               <Users className="w-4 h-4" />
             </div>
             <div>
-              <div className="inline-flex items-center space-x-1 bg-[#DDD5C7] text-[#4A3E2A] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CCC2B2] mb-0.5">
+              <div className="inline-flex items-center space-x-1 bg-[#D7E3FC] text-[#22223B] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CCDBFD] mb-0.5">
                 <span>Group Governance</span>
               </div>
               <h2 className="text-base font-extrabold text-zinc-900 leading-none">Learner Cohort Batch Management</h2>
@@ -147,7 +147,7 @@ export default function CohortManagementPanel() {
             <select
               value={selectedCourseId}
               onChange={(e) => setSelectedCourseId(parseInt(e.target.value))}
-              className="text-xs border border-[#DDD6C9] rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#4A3E2A] bg-white font-semibold text-zinc-900"
+              className="text-xs border border-[#CCDBFD] rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#22223B] bg-white font-semibold text-zinc-900"
             >
               {courses.map(c => (
                 <option key={c.id} value={c.id}>{c.code} — {c.title}</option>
@@ -157,9 +157,9 @@ export default function CohortManagementPanel() {
 
           <button
             onClick={() => setShowCreateModal(true)}
-            className="px-3.5 py-1.5 bg-[#18181B] text-white hover:bg-zinc-800 text-xs font-bold rounded-lg transition-colors flex items-center space-x-1.5 shadow shrink-0 border border-zinc-700"
+            className="px-3.5 py-1.5 bg-[#ABC4FF] text-[#22223B] hover:bg-[#B6CCFE] text-xs font-bold rounded-lg transition-colors flex items-center space-x-1.5 shadow shrink-0 border border-zinc-700"
           >
-            <Plus className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <Plus className="w-3.5 h-3.5 text-[#22223B]" />
             <span>Create Cohort Batch</span>
           </button>
         </div>
@@ -167,9 +167,9 @@ export default function CohortManagementPanel() {
 
       {/* Main Content Area */}
       {loading ? (
-        <div className="flex-1 min-h-0 flex items-center justify-center p-12 text-center text-gray-500 bg-white border border-[#E5E5E2] rounded-xl">
+        <div className="flex-1 min-h-0 flex items-center justify-center p-12 text-center text-gray-500 bg-white border border-[#D7E3FC] rounded-xl">
           <div>
-            <RefreshCw className="w-8 h-8 text-[#174A7E] animate-spin mx-auto mb-3" />
+            <RefreshCw className="w-8 h-8 text-[#22223B] animate-spin mx-auto mb-3" />
             <p className="text-sm font-semibold text-gray-700">Loading cohort batches...</p>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function CohortManagementPanel() {
       ) : (
         <div className="flex-1 min-h-0 overflow-y-auto pr-1 grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-max">
           {cohorts.map((cohort) => (
-            <div key={cohort.id} className="bg-white border border-[#E5E5E2] rounded-xl p-4 shadow-sm space-y-3">
+            <div key={cohort.id} className="bg-white border border-[#D7E3FC] rounded-xl p-4 shadow-sm space-y-3">
               <div className="flex items-start justify-between border-b border-gray-100 pb-2.5">
                 <div>
                   <h3 className="text-sm font-bold text-gray-900">{cohort.name}</h3>
@@ -207,7 +207,7 @@ export default function CohortManagementPanel() {
 
                 <button
                   onClick={() => setAddMemberCohort(cohort)}
-                  className="px-2.5 py-1 bg-blue-50 text-[#174A7E] border border-blue-200 text-xs font-semibold rounded-lg hover:bg-blue-100 transition-colors flex items-center space-x-1 shrink-0"
+                  className="px-2.5 py-1 bg-blue-50 text-[#22223B] border border-blue-200 text-xs font-semibold rounded-lg hover:bg-blue-100 transition-colors flex items-center space-x-1 shrink-0"
                 >
                   <UserPlus className="w-3.5 h-3.5" />
                   <span>Add Learner</span>
@@ -223,9 +223,9 @@ export default function CohortManagementPanel() {
                 {cohort.members && cohort.members.length > 0 ? (
                   <div className="space-y-1.5 max-h-40 overflow-y-auto pr-1">
                     {cohort.members.map((m) => (
-                      <div key={m.trainee_id} className="p-2 rounded-lg bg-[#F7F7F5] border border-[#E5E5E2] flex items-center justify-between text-xs">
+                      <div key={m.trainee_id} className="p-2 rounded-lg bg-[#EDF2FB] border border-[#D7E3FC] flex items-center justify-between text-xs">
                         <div className="flex items-center space-x-2">
-                          <div className="w-6 h-6 rounded-full bg-[#EAF2F8] text-[#174A7E] flex items-center justify-center font-bold text-[10px] shrink-0">
+                          <div className="w-6 h-6 rounded-full bg-[#EDF2FB] text-[#22223B] flex items-center justify-center font-bold text-[10px] shrink-0">
                             {m.full_name ? m.full_name[0] : 'U'}
                           </div>
                           <div className="truncate max-w-[140px]">
@@ -238,7 +238,7 @@ export default function CohortManagementPanel() {
                     ))}
                   </div>
                 ) : (
-                  <p className="text-xs text-gray-400 italic py-3 text-center bg-[#F7F7F5] rounded-lg border border-[#E5E5E2]">
+                  <p className="text-xs text-gray-400 italic py-3 text-center bg-[#EDF2FB] rounded-lg border border-[#D7E3FC]">
                     No learners assigned to this cohort batch yet.
                   </p>
                 )}
@@ -251,7 +251,7 @@ export default function CohortManagementPanel() {
       {/* Create Cohort Modal */}
       {showCreateModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-          <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-xl border border-[#E5E5E2]">
+          <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-xl border border-[#D7E3FC]">
             <div className="flex justify-between items-center pb-3 border-b border-gray-100">
               <h3 className="text-sm font-bold text-gray-900">Create New Cohort Batch</h3>
               <button onClick={() => setShowCreateModal(false)} className="text-gray-400 hover:text-gray-600">
@@ -268,7 +268,7 @@ export default function CohortManagementPanel() {
                   placeholder="e.g. Spring 2026 Batch Alpha"
                   value={newCohortName}
                   onChange={(e) => setNewCohortName(e.target.value)}
-                  className="w-full text-xs border border-[#E5E5E2] rounded-lg px-3 py-2 focus:outline-none focus:border-[#174A7E]"
+                  className="w-full text-xs border border-[#D7E3FC] rounded-lg px-3 py-2 focus:outline-none focus:border-[#22223B]"
                 />
               </div>
 
@@ -279,7 +279,7 @@ export default function CohortManagementPanel() {
                     type="date"
                     value={newStartDate}
                     onChange={(e) => setNewStartDate(e.target.value)}
-                    className="w-full text-xs border border-[#E5E5E2] rounded-lg px-3 py-2 focus:outline-none focus:border-[#174A7E]"
+                    className="w-full text-xs border border-[#D7E3FC] rounded-lg px-3 py-2 focus:outline-none focus:border-[#22223B]"
                   />
                 </div>
                 <div>
@@ -288,7 +288,7 @@ export default function CohortManagementPanel() {
                     type="date"
                     value={newEndDate}
                     onChange={(e) => setNewEndDate(e.target.value)}
-                    className="w-full text-xs border border-[#E5E5E2] rounded-lg px-3 py-2 focus:outline-none focus:border-[#174A7E]"
+                    className="w-full text-xs border border-[#D7E3FC] rounded-lg px-3 py-2 focus:outline-none focus:border-[#22223B]"
                   />
                 </div>
               </div>
@@ -297,14 +297,14 @@ export default function CohortManagementPanel() {
                 <button
                   type="button"
                   onClick={() => setShowCreateModal(false)}
-                  className="px-3.5 py-1.5 border border-[#E5E5E2] text-xs font-semibold rounded-lg text-gray-600 hover:bg-gray-50"
+                  className="px-3.5 py-1.5 border border-[#D7E3FC] text-xs font-semibold rounded-lg text-gray-600 hover:bg-gray-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-4 py-1.5 bg-[#174A7E] text-white text-xs font-semibold rounded-lg hover:bg-[#12395F] disabled:opacity-50"
+                  className="px-4 py-1.5 bg-[#ABC4FF] text-[#22223B] text-xs font-semibold rounded-lg hover:bg-[#B6CCFE] disabled:opacity-50"
                 >
                   {submitting ? 'Creating...' : 'Create Batch'}
                 </button>
@@ -317,7 +317,7 @@ export default function CohortManagementPanel() {
       {/* Add Member Modal */}
       {addMemberCohort && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-          <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-xl border border-[#E5E5E2]">
+          <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-xl border border-[#D7E3FC]">
             <div className="flex justify-between items-center pb-3 border-b border-gray-100">
               <h3 className="text-sm font-bold text-gray-900">Add Learner to {addMemberCohort.name}</h3>
               <button onClick={() => setAddMemberCohort(null)} className="text-gray-400 hover:text-gray-600">
@@ -332,7 +332,7 @@ export default function CohortManagementPanel() {
                   required
                   value={selectedTraineeId}
                   onChange={(e) => setSelectedTraineeId(e.target.value)}
-                  className="w-full text-xs border border-[#E5E5E2] rounded-lg px-3 py-2 focus:outline-none focus:border-[#174A7E] bg-white"
+                  className="w-full text-xs border border-[#D7E3FC] rounded-lg px-3 py-2 focus:outline-none focus:border-[#22223B] bg-white"
                 >
                   <option value="">-- Choose Learner --</option>
                   {availableTrainees.map(t => (
@@ -347,14 +347,14 @@ export default function CohortManagementPanel() {
                 <button
                   type="button"
                   onClick={() => setAddMemberCohort(null)}
-                  className="px-3.5 py-1.5 border border-[#E5E5E2] text-xs font-semibold rounded-lg text-gray-600 hover:bg-gray-50"
+                  className="px-3.5 py-1.5 border border-[#D7E3FC] text-xs font-semibold rounded-lg text-gray-600 hover:bg-gray-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submitting || !selectedTraineeId}
-                  className="px-4 py-1.5 bg-[#174A7E] text-white text-xs font-semibold rounded-lg hover:bg-[#12395F] disabled:opacity-50"
+                  className="px-4 py-1.5 bg-[#ABC4FF] text-[#22223B] text-xs font-semibold rounded-lg hover:bg-[#B6CCFE] disabled:opacity-50"
                 >
                   {submitting ? 'Adding...' : 'Add Member'}
                 </button>

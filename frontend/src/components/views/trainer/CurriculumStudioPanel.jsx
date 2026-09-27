@@ -159,11 +159,11 @@ export default function CurriculumStudioPanel() {
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
 
       {/* Header Banner */}
-      <div className="shrink-0 p-4 bg-white border border-[#E5E5E2] rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shadow-sm">
+      <div className="shrink-0 p-4 bg-white border border-[#D7E3FC] rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shadow-sm">
         <div>
-          <div className="flex items-center space-x-2 text-[#174A7E] mb-0.5">
+          <div className="flex items-center space-x-2 text-[#22223B] mb-0.5">
             <BookOpen className="w-4 h-4" />
-            <span className="text-[10px] font-bold uppercase bg-[#EAF2F8] px-2 py-0.5 rounded">Authoring Studio</span>
+            <span className="text-[10px] font-bold uppercase bg-[#EDF2FB] px-2 py-0.5 rounded">Authoring Studio</span>
           </div>
           <h2 className="text-base font-bold text-gray-900">Curriculum & Prerequisites DAG Authoring Studio</h2>
           <p className="text-[11px] text-gray-500">Design course structures, edit concept modules, manage DAG prerequisite edges with cycle validation</p>
@@ -174,7 +174,7 @@ export default function CurriculumStudioPanel() {
           <select
             value={selectedCourseId}
             onChange={(e) => setSelectedCourseId(Number(e.target.value))}
-            className="p-1.5 bg-[#F7F7F5] border border-[#E5E5E2] text-xs font-semibold text-gray-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+            className="p-1.5 bg-[#EDF2FB] border border-[#D7E3FC] text-xs font-semibold text-gray-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#22223B]"
           >
             {courses.map((c) => (
               <option key={c.id} value={c.id}>{c.code}: {c.title}</option>
@@ -186,7 +186,7 @@ export default function CurriculumStudioPanel() {
               setConceptForm({ code: `AIML-C${concepts.length + 1}`, title: '', description: '', module_name: 'Module 1', order_index: concepts.length + 1, estimated_hours: 4.0 });
               setConceptModalOpen(true);
             }}
-            className="px-3 py-1.5 bg-[#174A7E] text-white font-semibold text-xs rounded-lg hover:bg-[#12395F] transition-colors flex items-center space-x-1 shadow-sm"
+            className="px-3 py-1.5 bg-[#ABC4FF] text-[#22223B] font-semibold text-xs rounded-lg hover:bg-[#B6CCFE] transition-colors flex items-center space-x-1 shadow-sm"
           >
             <Plus className="w-4 h-4" />
             <span>Add Concept</span>
@@ -196,9 +196,9 @@ export default function CurriculumStudioPanel() {
 
       {/* Main Studio Split Layout */}
       {loading ? (
-        <div className="flex-1 min-h-0 flex items-center justify-center text-gray-500 bg-white border border-[#E5E5E2] rounded-xl">
+        <div className="flex-1 min-h-0 flex items-center justify-center text-gray-500 bg-white border border-[#D7E3FC] rounded-xl">
           <div className="text-center">
-            <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#174A7E]" />
+            <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#22223B]" />
             <p className="text-xs font-semibold text-gray-700">Loading Curriculum Tree...</p>
           </div>
         </div>
@@ -215,7 +215,7 @@ export default function CurriculumStudioPanel() {
         <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-3 gap-3 overflow-hidden">
           
           {/* Left Column: Concepts Tree Navigation */}
-          <div className="lg:col-span-1 h-full min-h-0 flex flex-col bg-white border border-[#E5E5E2] rounded-xl p-3.5 shadow-sm overflow-hidden">
+          <div className="lg:col-span-1 h-full min-h-0 flex flex-col bg-white border border-[#D7E3FC] rounded-xl p-3.5 shadow-sm overflow-hidden">
             <h3 className="shrink-0 font-bold text-xs uppercase tracking-wider text-gray-500 mb-2">Course Concepts Tree</h3>
             
             <div className="flex-1 min-h-0 overflow-y-auto space-y-1.5 pr-1">
@@ -227,15 +227,15 @@ export default function CurriculumStudioPanel() {
                     onClick={() => handleSelectConcept(c)}
                     className={`p-2.5 rounded-lg border text-xs cursor-pointer transition-all flex items-center justify-between ${
                       isSelected
-                        ? 'bg-[#EAF2F8] border-[#174A7E] text-[#174A7E] font-bold shadow-sm'
-                        : 'bg-[#F7F7F5] border-[#E5E5E2] text-gray-800 hover:bg-gray-100'
+                        ? 'bg-[#EDF2FB] border-[#22223B] text-[#22223B] font-bold shadow-sm'
+                        : 'bg-[#EDF2FB] border-[#D7E3FC] text-gray-800 hover:bg-gray-100'
                     }`}
                   >
                     <div>
                       <span className="text-[10px] font-mono text-gray-500 block">{c.code}</span>
                       <p className="line-clamp-1">{c.title}</p>
                     </div>
-                    <ChevronRight className={`w-4 h-4 ${isSelected ? 'text-[#174A7E]' : 'text-gray-400'}`} />
+                    <ChevronRight className={`w-4 h-4 ${isSelected ? 'text-[#22223B]' : 'text-gray-400'}`} />
                   </div>
                 );
               })}
@@ -247,10 +247,10 @@ export default function CurriculumStudioPanel() {
             {selectedConcept ? (
               <>
                 {/* Concept Details Header Card */}
-                <div className="inst-card bg-white border border-[#E5E5E2] rounded-xl p-5 shadow-sm space-y-3 text-xs">
+                <div className="inst-card bg-white border border-[#D7E3FC] rounded-xl p-5 shadow-sm space-y-3 text-xs">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="font-mono text-xs font-bold text-[#174A7E] bg-[#EAF2F8] px-2 py-0.5 rounded">
+                      <span className="font-mono text-xs font-bold text-[#22223B] bg-[#EDF2FB] px-2 py-0.5 rounded">
                         {selectedConcept.code}
                       </span>
                       <h3 className="text-base font-bold text-gray-900 mt-1">{selectedConcept.title}</h3>
@@ -264,21 +264,21 @@ export default function CurriculumStudioPanel() {
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
-                  <p className="text-gray-600 leading-relaxed bg-[#F7F7F5] p-3 rounded-lg border border-[#E5E5E2]">
+                  <p className="text-gray-600 leading-relaxed bg-[#EDF2FB] p-3 rounded-lg border border-[#D7E3FC]">
                     {selectedConcept.description}
                   </p>
                 </div>
 
                 {/* DAG Prerequisite Dependencies Manager */}
-                <div className="inst-card bg-white border border-[#E5E5E2] rounded-xl p-5 shadow-sm space-y-3 text-xs">
+                <div className="inst-card bg-white border border-[#D7E3FC] rounded-xl p-5 shadow-sm space-y-3 text-xs">
                   <div className="flex justify-between items-center border-b border-gray-100 pb-2">
                     <div className="flex items-center space-x-2 text-gray-900">
-                      <Network className="w-4 h-4 text-[#174A7E]" />
+                      <Network className="w-4 h-4 text-[#22223B]" />
                       <h4 className="font-bold text-sm">DAG Prerequisites (Cycle-Validated Edges)</h4>
                     </div>
                     <button
                       onClick={() => setPrereqModalOpen(true)}
-                      className="px-2.5 py-1 bg-[#174A7E] text-white font-semibold rounded text-[11px] hover:bg-[#12395F] transition-colors flex items-center space-x-1"
+                      className="px-2.5 py-1 bg-[#ABC4FF] text-[#22223B] font-semibold rounded text-[11px] hover:bg-[#B6CCFE] transition-colors flex items-center space-x-1"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>Add Dependency Edge</span>
@@ -290,7 +290,7 @@ export default function CurriculumStudioPanel() {
                       selectedConcept.prerequisite_concept_ids.map((pid) => {
                         const pConcept = concepts.find(c => c.id === pid);
                         return (
-                          <div key={pid} className="p-2.5 bg-[#F7F7F5] border border-[#E5E5E2] rounded-lg flex justify-between items-center">
+                          <div key={pid} className="p-2.5 bg-[#EDF2FB] border border-[#D7E3FC] rounded-lg flex justify-between items-center">
                             <div>
                               <span className="font-bold text-gray-900">{pConcept?.title || `Concept #${pid}`}</span>
                               <span className="text-[10px] text-gray-500 font-mono ml-2">({pConcept?.code})</span>
@@ -311,12 +311,12 @@ export default function CurriculumStudioPanel() {
                 </div>
 
                 {/* Learning Resources Editor */}
-                <div className="inst-card bg-white border border-[#E5E5E2] rounded-xl p-5 shadow-sm space-y-3 text-xs">
+                <div className="inst-card bg-white border border-[#D7E3FC] rounded-xl p-5 shadow-sm space-y-3 text-xs">
                   <div className="flex justify-between items-center border-b border-gray-100 pb-2">
                     <h4 className="font-bold text-sm text-gray-900">Concept Resources (Videos, PDFs, Notebooks)</h4>
                     <button
                       onClick={() => setResourceModalOpen(true)}
-                      className="px-2.5 py-1 bg-[#174A7E] text-white font-semibold rounded text-[11px] hover:bg-[#12395F] transition-colors flex items-center space-x-1"
+                      className="px-2.5 py-1 bg-[#ABC4FF] text-[#22223B] font-semibold rounded text-[11px] hover:bg-[#B6CCFE] transition-colors flex items-center space-x-1"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>Add Resource</span>
@@ -326,7 +326,7 @@ export default function CurriculumStudioPanel() {
                   <div className="space-y-2">
                     {resources.length > 0 ? (
                       resources.map((r) => (
-                        <div key={r.id} className="p-3 bg-[#F7F7F5] border border-[#E5E5E2] rounded-lg flex justify-between items-center">
+                        <div key={r.id} className="p-3 bg-[#EDF2FB] border border-[#D7E3FC] rounded-lg flex justify-between items-center">
                           <div className="space-y-0.5">
                             <div className="flex items-center space-x-2">
                               <span className="font-bold text-gray-900">{r.title}</span>
@@ -364,7 +364,7 @@ export default function CurriculumStudioPanel() {
       {/* Add Concept Modal */}
       {conceptModalOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-[#E5E5E2] max-w-lg w-full p-6 space-y-4 shadow-xl">
+          <div className="bg-white rounded-xl border border-[#D7E3FC] max-w-lg w-full p-6 space-y-4 shadow-xl">
             <h3 className="font-bold text-base text-gray-900">Create New Concept Module</h3>
             
             <form onSubmit={handleAddConcept} className="space-y-3 text-xs">
@@ -443,7 +443,7 @@ export default function CurriculumStudioPanel() {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#174A7E] text-white rounded font-semibold hover:bg-[#12395F]"
+                  className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded font-semibold hover:bg-[#B6CCFE]"
                 >
                   Create Concept
                 </button>
@@ -456,11 +456,11 @@ export default function CurriculumStudioPanel() {
       {/* Add Prerequisite Edge Modal */}
       {prereqModalOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-[#E5E5E2] max-w-md w-full p-6 space-y-4 shadow-xl">
+          <div className="bg-white rounded-xl border border-[#D7E3FC] max-w-md w-full p-6 space-y-4 shadow-xl">
             <h3 className="font-bold text-base text-gray-900">Add DAG Prerequisite Dependency Edge</h3>
             
             <p className="text-xs text-gray-600">
-              Select which concept must be mastered before learning <span className="font-bold text-[#174A7E]">{selectedConcept?.title}</span>. Server automatically validates graph acyclicity.
+              Select which concept must be mastered before learning <span className="font-bold text-[#22223B]">{selectedConcept?.title}</span>. Server automatically validates graph acyclicity.
             </p>
 
             <div className="text-xs space-y-2">
@@ -468,7 +468,7 @@ export default function CurriculumStudioPanel() {
               <select
                 value={selectedPrereqId}
                 onChange={(e) => setSelectedPrereqId(e.target.value)}
-                className="w-full p-2 bg-[#F7F7F5] border border-gray-300 rounded font-semibold"
+                className="w-full p-2 bg-[#EDF2FB] border border-gray-300 rounded font-semibold"
               >
                 <option value="">Select Prerequisite Concept...</option>
                 {concepts
@@ -488,7 +488,7 @@ export default function CurriculumStudioPanel() {
               </button>
               <button
                 onClick={handleAddPrerequisite}
-                className="px-4 py-2 bg-[#174A7E] text-white font-semibold text-xs rounded-lg hover:bg-[#12395F]"
+                className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] font-semibold text-xs rounded-lg hover:bg-[#B6CCFE]"
               >
                 Add Edge (Cycle Check)
               </button>
@@ -500,7 +500,7 @@ export default function CurriculumStudioPanel() {
       {/* Add Resource Modal */}
       {resourceModalOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-[#E5E5E2] max-w-lg w-full p-6 space-y-4 shadow-xl">
+          <div className="bg-white rounded-xl border border-[#D7E3FC] max-w-lg w-full p-6 space-y-4 shadow-xl">
             <h3 className="font-bold text-base text-gray-900">Add Learning Resource</h3>
             
             <form onSubmit={handleAddResource} className="space-y-3 text-xs">
@@ -562,7 +562,7 @@ export default function CurriculumStudioPanel() {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#174A7E] text-white rounded font-semibold hover:bg-[#12395F]"
+                  className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded font-semibold hover:bg-[#B6CCFE]"
                 >
                   Add Resource
                 </button>

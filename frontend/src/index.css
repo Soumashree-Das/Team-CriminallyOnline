@@ -5,6 +5,21 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --palette-white: #FFFFFF;
+    --palette-alice-blue: #EDF2FB;
+    --palette-lavender: #E2EAFC;
+    --palette-lavender-deep: #D7E3FC;
+    --palette-periwinkle-soft: #CCDBFD;
+    --palette-periwinkle: #C1D3FE;
+    --palette-periwinkle-strong: #B6CCFE;
+    --palette-baby-blue-ice: #ABC4FF;
+    --palette-ink: #22223B;
+    --surface: #FFFFFF;
+    --surface-soft: var(--palette-alice-blue);
+    --text-primary: var(--palette-ink);
+  }
   html, body, #root {
     height: 100%;
     margin: 0;
@@ -13,19 +28,56 @@
   }
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #F4F1EA;
-    color: #1A1A1A;
+    background-color: var(--palette-alice-blue);
+    background-image: linear-gradient(rgba(237, 242, 251, 0.62), rgba(237, 242, 251, 0.62)), url('/images/colored-pencils-background.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-primary);
   }
 }
 
-/* Custom Editorial Warm-Neutral Design System */
+.site-wallpaper {
+  background-color: var(--palette-alice-blue);
+  background-image: linear-gradient(rgba(237, 242, 251, 0.46), rgba(237, 242, 251, 0.46)), url('/images/purple-study-desk-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.role-selection-page {
+  background-color: #FFFFFF;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('/images/education-background.avif');
+  background-size: cover;
+  background-position: center;
+}
+
+.role-login-page {
+  background-color: #FFFFFF;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('/images/education-background.avif');
+  background-size: cover;
+  background-position: center;
+}
+
+.role-login-panel {
+  background-color: #FFFFFF;
+}
+
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.76) !important;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 28px rgba(34, 34, 59, 0.08);
+}
+
+/* Shared bright palette surfaces */
 .font-serif-quote {
   font-family: 'Playfair Display', Georgia, serif;
 }
 
 .inst-card {
   background-color: #FFFFFF;
-  border: 1px solid #E5E0D8;
+  border: 1px solid #D7E3FC;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
 }
@@ -34,33 +86,33 @@
   transition: all 0.2s ease-in-out;
 }
 .inst-card-hover:hover {
-  border-color: #C5A880;
-  box-shadow: 0 4px 12px rgba(197, 168, 128, 0.12);
+  border-color: #ABC4FF;
+  box-shadow: 0 4px 12px rgba(171, 196, 255, 0.24);
 }
 
 /* Muted Status Badges */
 .badge-muted-sage {
-  background-color: #E3EBE3;
-  color: #264A26;
-  border: 1px solid #C4DAC4;
+  background-color: #D7E3FC;
+  color: #22223B;
+  border: 1px solid #CCDBFD;
 }
 
 .badge-muted-amber {
-  background-color: #FBF3D5;
-  color: #5C4610;
-  border: 1px solid #F2E3A8;
+  background-color: #EDF2FB;
+  color: #22223B;
+  border: 1px solid #D7E3FC;
 }
 
 .badge-muted-blue {
-  background-color: #E8F0F8;
-  color: #1E3A5F;
-  border: 1px solid #C3D7ED;
+  background-color: #E2EAFC;
+  color: #22223B;
+  border: 1px solid #D7E3FC;
 }
 
 .badge-muted-grey {
-  background-color: #EFECE6;
-  color: #55524D;
-  border: 1px solid #DDD8CE;
+  background-color: #EDF2FB;
+  color: #22223B;
+  border: 1px solid #D7E3FC;
 }
 
 /* Custom Scrollbars */
@@ -69,12 +121,12 @@
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F1EA;
+  background: #EDF2FB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D5CFC4;
+  background: #B6CCFE;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B5AEA1;
+  background: #22223B;
 }

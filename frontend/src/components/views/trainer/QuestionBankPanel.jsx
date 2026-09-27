@@ -130,11 +130,11 @@ export default function QuestionBankPanel() {
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
 
       {/* Header Banner */}
-      <div className="shrink-0 inst-card p-4 sm:p-5 bg-white border border-[#E5E5E2] rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-sm">
+      <div className="shrink-0 inst-card p-4 sm:p-5 bg-white border border-[#D7E3FC] rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-sm">
         <div>
-          <div className="flex items-center space-x-2 text-[#174A7E] mb-1">
+          <div className="flex items-center space-x-2 text-[#22223B] mb-1">
             <HelpCircle className="w-5 h-5" />
-            <span className="text-xs font-bold uppercase bg-[#EAF2F8] px-2 py-0.5 rounded">Diagnostic & Assessment Bank</span>
+            <span className="text-xs font-bold uppercase bg-[#EDF2FB] px-2 py-0.5 rounded">Diagnostic & Assessment Bank</span>
           </div>
           <h2 className="text-lg font-bold text-gray-900">Question Bank & Formative Assessment Manager</h2>
           <p className="text-xs text-gray-500">Create, edit, and organize 20-question diagnostic entry gate questions and concept MCQs with explanations</p>
@@ -142,7 +142,7 @@ export default function QuestionBankPanel() {
 
         <button
           onClick={openAddModal}
-          className="px-4 py-2 bg-[#174A7E] text-white font-semibold text-xs rounded-lg hover:bg-[#12395F] transition-colors flex items-center space-x-1.5 shadow shrink-0"
+          className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] font-semibold text-xs rounded-lg hover:bg-[#B6CCFE] transition-colors flex items-center space-x-1.5 shadow shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Question</span>
@@ -150,7 +150,7 @@ export default function QuestionBankPanel() {
       </div>
 
       {/* Filter Bar */}
-      <div className="shrink-0 p-4 bg-white border border-[#E5E5E2] rounded-xl grid grid-cols-1 sm:grid-cols-2 gap-3 shadow-sm">
+      <div className="shrink-0 p-4 bg-white border border-[#D7E3FC] rounded-xl grid grid-cols-1 sm:grid-cols-2 gap-3 shadow-sm">
         <div className="relative">
           <Search className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
           <input
@@ -158,7 +158,7 @@ export default function QuestionBankPanel() {
             placeholder="Search question text or concept topic..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 bg-[#F7F7F5] border border-gray-300 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+            className="w-full pl-9 pr-3 py-2 bg-[#EDF2FB] border border-gray-300 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-[#22223B]"
           />
         </div>
 
@@ -166,7 +166,7 @@ export default function QuestionBankPanel() {
           <select
             value={topicFilter}
             onChange={(e) => setTopicFilter(e.target.value)}
-            className="w-full p-2 bg-[#F7F7F5] border border-gray-300 rounded-lg text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+            className="w-full p-2 bg-[#EDF2FB] border border-gray-300 rounded-lg text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-[#22223B]"
           >
             <option value="">All Knowledge Topics</option>
             {topicsList.map(t => (
@@ -178,9 +178,9 @@ export default function QuestionBankPanel() {
 
       {/* Questions List */}
       {loading ? (
-        <div className="flex-1 min-h-0 flex items-center justify-center p-12 text-center text-gray-500 bg-white border border-[#E5E5E2] rounded-xl">
+        <div className="flex-1 min-h-0 flex items-center justify-center p-12 text-center text-gray-500 bg-white border border-[#D7E3FC] rounded-xl">
           <div>
-            <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#174A7E]" />
+            <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#22223B]" />
             <p className="text-xs font-semibold text-gray-700">Loading Question Bank Items...</p>
           </div>
         </div>
@@ -206,11 +206,11 @@ export default function QuestionBankPanel() {
       ) : (
         <div className="flex-1 min-h-0 overflow-y-auto pr-1 space-y-4">
           {questions.map((q, idx) => (
-            <div key={q.id} className="inst-card bg-white border border-[#E5E5E2] rounded-xl p-5 shadow-sm space-y-3 text-xs">
+            <div key={q.id} className="inst-card bg-white border border-[#D7E3FC] rounded-xl p-5 shadow-sm space-y-3 text-xs">
               <div className="flex justify-between items-start">
                 <div className="flex items-center space-x-2">
                   <span className="font-bold text-gray-400">#{idx + 1}</span>
-                  <span className="font-bold text-[#174A7E] bg-[#EAF2F8] px-2.5 py-0.5 rounded text-[11px]">
+                  <span className="font-bold text-[#22223B] bg-[#EDF2FB] px-2.5 py-0.5 rounded text-[11px]">
                     {q.topic}
                   </span>
                   <span className="text-gray-500 text-[11px]">&bull; {q.concept_title}</span>
@@ -243,7 +243,7 @@ export default function QuestionBankPanel() {
                       className={`p-2.5 rounded-lg border font-medium flex items-center justify-between ${
                         isCorrect
                           ? 'bg-emerald-50 border-emerald-300 text-emerald-900 font-bold'
-                          : 'bg-[#F7F7F5] border-[#E5E5E2] text-gray-700'
+                          : 'bg-[#EDF2FB] border-[#D7E3FC] text-gray-700'
                       }`}
                     >
                       <span>{String.fromCharCode(65 + oIdx)}. {opt}</span>
@@ -266,7 +266,7 @@ export default function QuestionBankPanel() {
       {/* Add / Edit Question Modal */}
       {questionModalOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-[#E5E5E2] max-w-lg w-full p-6 space-y-4 shadow-xl max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-xl border border-[#D7E3FC] max-w-lg w-full p-6 space-y-4 shadow-xl max-h-[90vh] overflow-y-auto">
             <h3 className="font-bold text-base text-gray-900">
               {editingQuestion ? 'Edit Question' : 'Add New Assessment Question'}
             </h3>
@@ -307,7 +307,7 @@ export default function QuestionBankPanel() {
                       name="correct_option"
                       checked={form.correct_option_index === idx}
                       onChange={() => setForm({ ...form, correct_option_index: idx })}
-                      className="w-4 h-4 text-[#174A7E]"
+                      className="w-4 h-4 text-[#22223B]"
                     />
                     <input
                       type="text"
@@ -341,7 +341,7 @@ export default function QuestionBankPanel() {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#174A7E] text-white rounded font-semibold hover:bg-[#12395F]"
+                  className="px-4 py-2 bg-[#ABC4FF] text-[#22223B] rounded font-semibold hover:bg-[#B6CCFE]"
                 >
                   Save Question
                 </button>

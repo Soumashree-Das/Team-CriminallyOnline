@@ -68,13 +68,13 @@ export default function AuthModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="bg-white border border-[#E5E5E2] rounded-2xl max-w-md w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
+      <div className="bg-white border border-[#D7E3FC] rounded-2xl max-w-md w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
         
         {/* Header */}
-        <div className="bg-[#174A7E] text-white p-6 relative">
+        <div className="bg-[#E2EAFC] text-[#22223B] p-6 relative border-b border-[#ABC4FF]">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
+            className="absolute top-4 right-4 text-[#22223B]/70 hover:text-[#22223B] p-1 rounded-full hover:bg-white/70 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -90,12 +90,12 @@ export default function AuthModal({ isOpen, onClose }) {
           </div>
 
           {/* Mode Switch Tabs */}
-          <div className="flex bg-black/20 p-1 rounded-xl mt-5 border border-white/10 text-xs font-semibold">
+          <div className="flex bg-white/70 p-1 rounded-xl mt-5 border border-[#ABC4FF] text-xs font-semibold">
             <button
               type="button"
               onClick={() => { setActiveTab('login'); setError(''); }}
               className={`flex-1 py-2 rounded-lg transition-all flex items-center justify-center space-x-1.5 ${
-                activeTab === 'login' ? 'bg-white text-[#174A7E] shadow-md font-bold' : 'text-white/80 hover:text-white'
+                activeTab === 'login' ? 'bg-white text-[#22223B] shadow-md font-bold' : 'text-[#22223B]/70 hover:text-[#22223B]'
               }`}
             >
               <LogIn className="w-3.5 h-3.5" />
@@ -105,7 +105,7 @@ export default function AuthModal({ isOpen, onClose }) {
               type="button"
               onClick={() => { setActiveTab('register'); setError(''); }}
               className={`flex-1 py-2 rounded-lg transition-all flex items-center justify-center space-x-1.5 ${
-                activeTab === 'register' ? 'bg-white text-[#174A7E] shadow-md font-bold' : 'text-white/80 hover:text-white'
+                activeTab === 'register' ? 'bg-white text-[#22223B] shadow-md font-bold' : 'text-[#22223B]/70 hover:text-[#22223B]'
               }`}
             >
               <UserPlus className="w-3.5 h-3.5" />
@@ -134,7 +134,7 @@ export default function AuthModal({ isOpen, onClose }) {
                     placeholder="name@connectcare.edu"
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
-                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#E5E5E2] rounded-xl focus:outline-none focus:border-[#174A7E]"
+                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#D7E3FC] rounded-xl focus:outline-none focus:border-[#22223B]"
                   />
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function AuthModal({ isOpen, onClose }) {
                     placeholder="••••••••"
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
-                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#E5E5E2] rounded-xl focus:outline-none focus:border-[#174A7E]"
+                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#D7E3FC] rounded-xl focus:outline-none focus:border-[#22223B]"
                   />
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default function AuthModal({ isOpen, onClose }) {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-2.5 bg-[#174A7E] text-white text-xs font-bold rounded-xl hover:bg-[#12395F] disabled:opacity-50 transition-colors shadow-sm"
+                className="w-full py-2.5 bg-[#ABC4FF] text-[#22223B] text-xs font-bold rounded-xl hover:bg-[#B6CCFE] disabled:opacity-50 transition-colors shadow-sm"
               >
                 {loading ? 'Authenticating...' : 'Sign In to Portal'}
               </button>
@@ -169,7 +169,7 @@ export default function AuthModal({ isOpen, onClose }) {
                   <button
                     type="button"
                     onClick={() => handleQuickFill('rajesh@capacityconnect.edu', 'demo1234')}
-                    className="p-1.5 border border-blue-200 bg-blue-50 text-[#174A7E] rounded-lg font-semibold hover:bg-blue-100"
+                    className="p-1.5 border border-blue-200 bg-blue-50 text-[#22223B] rounded-lg font-semibold hover:bg-blue-100"
                   >
                     Trainer Demo
                   </button>
@@ -202,7 +202,7 @@ export default function AuthModal({ isOpen, onClose }) {
                     placeholder="Dr. Rajesh Kumar"
                     value={regFullName}
                     onChange={(e) => setRegFullName(e.target.value)}
-                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#E5E5E2] rounded-xl focus:outline-none focus:border-[#174A7E]"
+                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#D7E3FC] rounded-xl focus:outline-none focus:border-[#22223B]"
                   />
                 </div>
               </div>
@@ -217,7 +217,7 @@ export default function AuthModal({ isOpen, onClose }) {
                     placeholder="user@connectcare.edu"
                     value={regEmail}
                     onChange={(e) => setRegEmail(e.target.value)}
-                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#E5E5E2] rounded-xl focus:outline-none focus:border-[#174A7E]"
+                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#D7E3FC] rounded-xl focus:outline-none focus:border-[#22223B]"
                   />
                 </div>
               </div>
@@ -232,7 +232,7 @@ export default function AuthModal({ isOpen, onClose }) {
                     placeholder="Set account password"
                     value={regPassword}
                     onChange={(e) => setRegPassword(e.target.value)}
-                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#E5E5E2] rounded-xl focus:outline-none focus:border-[#174A7E]"
+                    className="w-full text-xs pl-9 pr-3 py-2 border border-[#D7E3FC] rounded-xl focus:outline-none focus:border-[#22223B]"
                   />
                 </div>
               </div>
@@ -243,7 +243,7 @@ export default function AuthModal({ isOpen, onClose }) {
                   <select
                     value={regRole}
                     onChange={(e) => setRegRole(e.target.value)}
-                    className="w-full text-xs py-2 px-2.5 border border-[#E5E5E2] rounded-xl focus:outline-none focus:border-[#174A7E] bg-white font-semibold"
+                    className="w-full text-xs py-2 px-2.5 border border-[#D7E3FC] rounded-xl focus:outline-none focus:border-[#22223B] bg-white font-semibold"
                   >
                     <option value="trainee">Trainee Learner</option>
                     <option value="trainer">Trainer Educator</option>
@@ -256,7 +256,7 @@ export default function AuthModal({ isOpen, onClose }) {
                     placeholder="Ph.D. / M.Tech"
                     value={regEducation}
                     onChange={(e) => setRegEducation(e.target.value)}
-                    className="w-full text-xs px-3 py-2 border border-[#E5E5E2] rounded-xl focus:outline-none focus:border-[#174A7E]"
+                    className="w-full text-xs px-3 py-2 border border-[#D7E3FC] rounded-xl focus:outline-none focus:border-[#22223B]"
                   />
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function AuthModal({ isOpen, onClose }) {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-2.5 bg-[#174A7E] text-white text-xs font-bold rounded-xl hover:bg-[#12395F] disabled:opacity-50 transition-colors shadow-sm mt-2"
+                className="w-full py-2.5 bg-[#ABC4FF] text-[#22223B] text-xs font-bold rounded-xl hover:bg-[#B6CCFE] disabled:opacity-50 transition-colors shadow-sm mt-2"
               >
                 {loading ? 'Creating Account...' : 'Register & Create Account'}
               </button>

@@ -64,6 +64,32 @@ def seed_database():
         phone_number="+91 98567 89012"
     )
 
+    # Sample applicants for the trainer's AIML-06 enrollment queue.
+    neha = models.User(
+        email="neha.rao@capacityconnect.edu",
+        full_name="Neha Rao",
+        password_hash=demo_password_hash,
+        role="trainee",
+        aadhaar_masked="XXXX-XXXX-3417",
+        govt_id_type="Aadhaar Card",
+        phone_number="+91 98678 90123"
+    )
+
+    kabir = models.User(
+        email="kabir.mehta@capacityconnect.edu",
+        full_name="Kabir Mehta",
+        password_hash=demo_password_hash,
+        role="trainee",
+        aadhaar_masked="XXXX-XXXX-5826",
+        govt_id_type="Aadhaar Card",
+        phone_number="+91 98789 01234"
+    )
+
+    ishita = models.User(email="ishita.kapoor@capacityconnect.edu", full_name="Ishita Kapoor", password_hash=demo_password_hash, role="trainee", aadhaar_masked="XXXX-XXXX-7041", govt_id_type="Aadhaar Card", phone_number="+91 98890 12345")
+    dev = models.User(email="dev.malhotra@capacityconnect.edu", full_name="Dev Malhotra", password_hash=demo_password_hash, role="trainee", aadhaar_masked="XXXX-XXXX-8163", govt_id_type="Aadhaar Card", phone_number="+91 98901 23456")
+    meera = models.User(email="meera.nair@capacityconnect.edu", full_name="Meera Nair", password_hash=demo_password_hash, role="trainee", aadhaar_masked="XXXX-XXXX-9275", govt_id_type="Passport", phone_number="+91 98012 34567")
+    arjun = models.User(email="arjun.rao@capacityconnect.edu", full_name="Arjun Rao", password_hash=demo_password_hash, role="trainee", aadhaar_masked="XXXX-XXXX-1384", govt_id_type="Aadhaar Card", phone_number="+91 98123 45679")
+
     trainer = models.User(
         email="rajesh@capacityconnect.edu",
         full_name="Dr. Rajesh Kumar",
@@ -84,7 +110,7 @@ def seed_database():
         phone_number="+91 99000 00000"
     )
 
-    db.add_all([jhanvi, aarav, ananya, rohan, priya, trainer, admin])
+    db.add_all([jhanvi, aarav, ananya, rohan, priya, neha, kabir, ishita, dev, meera, arjun, trainer, admin])
     db.commit()
 
     # Create Profiles
@@ -94,6 +120,12 @@ def seed_database():
         (ananya.id, "B.E. Information Technology", "Junior Developer", 1.5, "Transition into AI Systems Architect", 5),
         (rohan.id, "B.Sc Mathematics", "Analytics Intern", 0.5, "Master Machine Learning Foundations", 3),
         (priya.id, "B.Tech Electronics", "Software Trainee", 1.0, "Become Data Scientist", 4),
+        (neha.id, "B.Tech Information Technology", "Junior Data Analyst", 1.0, "Become an ML Engineer", 2),
+        (kabir.id, "B.Sc Computer Science", "Software Intern", 0.5, "Build production AI applications", 1),
+        (ishita.id, "B.Tech Computer Science", "Student Developer", 0.5, "Become an AI Engineer", 1),
+        (dev.id, "M.Sc Data Science", "Data Analyst", 2.0, "Become an Applied ML Engineer", 3),
+        (meera.id, "B.E. Electronics and Communication", "Graduate Trainee", 1.0, "Specialize in NLP and LLMs", 2),
+        (arjun.id, "B.Tech Information Systems", "Python Developer", 1.5, "Become an AI Solutions Architect", 4),
     ]
 
     for uid, edu, crole, exp, goal, streak in trainee_profiles:
@@ -301,6 +333,12 @@ def seed_database():
         (ananya.id, c2.id, "approval_pending", 0.70),
         (rohan.id, c1.id, "approved", 0.65),
         (priya.id, c1.id, "approval_pending", 0.55),
+        (neha.id, c6.id, "approval_pending", 0.82),
+        (kabir.id, c6.id, "approval_pending", 0.68),
+        (ishita.id, c6.id, "approval_pending", 0.76),
+        (dev.id, c6.id, "approval_pending", 0.91),
+        (meera.id, c6.id, "approval_pending", 0.64),
+        (arjun.id, c6.id, "approval_pending", 0.79),
     ]
 
     for t_id, crs_id, st, score in enrollments_seed:

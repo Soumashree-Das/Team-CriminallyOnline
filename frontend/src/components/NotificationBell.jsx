@@ -63,10 +63,10 @@ export default function NotificationBell() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-80 sm:w-96 bg-white border border-[#E5E5E2] rounded-xl shadow-xl z-50 overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 bg-[#F7F7F5] border-b border-[#E5E5E2]">
+        <div className="absolute right-0 mt-2 w-80 sm:w-96 bg-white border border-[#D7E3FC] rounded-xl shadow-xl z-50 overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-3 bg-[#EDF2FB] border-b border-[#D7E3FC]">
             <div className="flex items-center space-x-2">
-              <Bell className="w-4 h-4 text-[#174A7E]" />
+              <Bell className="w-4 h-4 text-[#22223B]" />
               <h3 className="text-xs font-bold uppercase tracking-wider text-gray-800">Notifications</h3>
             </div>
             {unreadCount > 0 && (
@@ -95,7 +95,7 @@ export default function NotificationBell() {
                     ) : n.type === 'at_risk_alert' ? (
                       <AlertTriangle className="w-4 h-4 text-amber-600" />
                     ) : (
-                      <Info className="w-4 h-4 text-[#174A7E]" />
+                      <Info className="w-4 h-4 text-[#22223B]" />
                     )}
                   </div>
 
@@ -109,7 +109,7 @@ export default function NotificationBell() {
                   {!n.is_read && (
                     <button
                       onClick={() => handleMarkRead(n.id)}
-                      className="shrink-0 text-[10px] font-semibold text-[#174A7E] hover:underline"
+                      className="shrink-0 text-[10px] font-semibold text-[#22223B] hover:underline"
                     >
                       Mark read
                     </button>

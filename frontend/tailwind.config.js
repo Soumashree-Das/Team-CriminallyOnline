@@ -7,13 +7,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: "#F7F7F5",
+        paper: "#EDF2FB",
+        alice: "#EDF2FB",
+        lavender: {
+          100: "#EDF2FB",
+          200: "#E2EAFC",
+          300: "#D7E3FC"
+        },
+        periwinkle: {
+          100: "#CCDBFD",
+          200: "#C1D3FE",
+          300: "#B6CCFE"
+        },
+        babyblue: "#ABC4FF",
+        indigo: "#22223B",
         navy: {
-          50: "#EAF2F8",
-          100: "#D4E5F2",
-          700: "#174A7E",
-          800: "#12395F",
-          900: "#0D2743"
+          50: "#EDF2FB",
+          100: "#E2EAFC",
+          700: "#22223B",
+          800: "#B6CCFE",
+          900: "#22223B"
         }
       }
     },

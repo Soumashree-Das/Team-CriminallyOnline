@@ -67,11 +67,11 @@ export default function CompetencyHeatmapPanel() {
       />
 
       {/* Header Banner */}
-      <div className="shrink-0 inst-card p-4 sm:p-5 bg-white border border-[#E5E5E2] rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-sm">
+      <div className="shrink-0 inst-card p-4 sm:p-5 bg-white border border-[#D7E3FC] rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-sm">
         <div>
-          <div className="flex items-center space-x-2 text-[#174A7E] mb-1">
+          <div className="flex items-center space-x-2 text-[#22223B] mb-1">
             <Network className="w-5 h-5" />
-            <span className="text-xs font-bold uppercase bg-[#EAF2F8] px-2 py-0.5 rounded">Competency Analytics</span>
+            <span className="text-xs font-bold uppercase bg-[#EDF2FB] px-2 py-0.5 rounded">Competency Analytics</span>
           </div>
           <h2 className="text-lg font-bold text-gray-900">Cohort Competency Heatmap & Decision Support</h2>
           <p className="text-xs text-gray-500">Visualizing concept mastery distribution and bottleneck identification across course tracks</p>
@@ -83,7 +83,7 @@ export default function CompetencyHeatmapPanel() {
           <select
             value={selectedCourseId}
             onChange={(e) => setSelectedCourseId(Number(e.target.value))}
-            className="p-2 bg-[#F7F7F5] border border-[#E5E5E2] text-xs font-semibold text-gray-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+            className="p-2 bg-[#EDF2FB] border border-[#D7E3FC] text-xs font-semibold text-gray-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#22223B]"
           >
             {courses.map((c) => (
               <option key={c.id} value={c.id}>
@@ -96,9 +96,9 @@ export default function CompetencyHeatmapPanel() {
 
       {/* Heatmap Section */}
       {loading ? (
-        <div className="flex-1 min-h-0 flex items-center justify-center p-12 text-center text-gray-500 bg-white border border-[#E5E5E2] rounded-xl">
+        <div className="flex-1 min-h-0 flex items-center justify-center p-12 text-center text-gray-500 bg-white border border-[#D7E3FC] rounded-xl">
           <div className="text-center">
-            <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#174A7E]" />
+            <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#22223B]" />
             <p className="text-xs font-semibold text-gray-700">Loading Cohort Competency Data...</p>
           </div>
         </div>
@@ -120,25 +120,25 @@ export default function CompetencyHeatmapPanel() {
           />
         </div>
       ) : (
-        <div className="flex-1 min-h-0 flex flex-col inst-card p-5 bg-white border border-[#E5E5E2] rounded-xl shadow-sm overflow-hidden">
+        <div className="flex-1 min-h-0 flex flex-col inst-card p-5 bg-white border border-[#D7E3FC] rounded-xl shadow-sm overflow-hidden">
           <div className="shrink-0 flex justify-between items-center border-b border-gray-100 pb-3 mb-3">
             <div>
               <h3 className="text-sm font-bold text-gray-900">Concept Mastery Distribution</h3>
-              <p className="text-[11px] text-gray-500">Total Enrolled Cohort: <span className="font-bold text-[#174A7E]">{trainerKg?.total_enrolled || 0} Learners</span></p>
+              <p className="text-[11px] text-gray-500">Total Enrolled Cohort: <span className="font-bold text-[#22223B]">{trainerKg?.total_enrolled || 0} Learners</span></p>
             </div>
             <span className="text-[11px] text-gray-500 italic">Click on weak learner groups to inspect profile drill-down</span>
           </div>
 
           <div className="flex-1 min-h-0 overflow-y-auto pr-1 space-y-4">
             {concepts.map((c) => (
-              <div key={c.concept_id} className="p-4 bg-[#F7F7F5] rounded-xl border border-[#E5E5E2] space-y-3">
+              <div key={c.concept_id} className="p-4 bg-[#EDF2FB] rounded-xl border border-[#D7E3FC] space-y-3">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
                   <div>
                     <h4 className="font-bold text-sm text-gray-900">{c.title}</h4>
                     <p className="text-[10px] text-gray-500">{c.module_name}</p>
                   </div>
                   <span className="text-xs font-semibold text-gray-700 bg-white px-2.5 py-1 rounded-md border border-gray-200">
-                    Class Avg Mastery: <span className="font-bold text-[#174A7E]">{c.avg_mastery}%</span>
+                    Class Avg Mastery: <span className="font-bold text-[#22223B]">{c.avg_mastery}%</span>
                   </span>
                 </div>
 

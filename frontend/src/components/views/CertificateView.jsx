@@ -55,7 +55,7 @@ export default function CertificateView({ onNavigate }) {
   if (loading) {
     return (
       <div className="p-12 text-center text-slate-500">
-        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#174A7E]" />
+        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#22223B]" />
         <p className="text-sm font-medium">Verifying Institutional Certificate Records...</p>
       </div>
     );
@@ -86,7 +86,7 @@ export default function CertificateView({ onNavigate }) {
             margin: 0 !important;
             padding: 40px !important;
             box-shadow: none !important;
-            border: 6px solid #174A7E !important;
+            border: 6px solid #22223B !important;
             background: #FFFFFF !important;
           }
           .no-print {
@@ -98,9 +98,9 @@ export default function CertificateView({ onNavigate }) {
       {/* Header Banner (Screen Only) */}
       <div className="no-print inst-card p-5 bg-white border border-slate-200 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
         <div>
-          <div className="flex items-center space-x-2 text-[#174A7E] mb-1">
+          <div className="flex items-center space-x-2 text-[#22223B] mb-1">
             <Award className="w-5 h-5" />
-            <span className="text-xs font-bold uppercase bg-[#EAF2F8] px-2 py-0.5 rounded">Digital Certification</span>
+            <span className="text-xs font-bold uppercase bg-[#EDF2FB] px-2 py-0.5 rounded">Digital Certification</span>
           </div>
           <h1 className="text-xl font-bold text-slate-900">Official Institutional Certificate</h1>
           <p className="text-xs text-slate-600">Formal capacity credential &bull; Awarded upon 100% course completion</p>
@@ -111,7 +111,7 @@ export default function CertificateView({ onNavigate }) {
             onClick={() => window.print()}
             className="px-4 py-2 border border-slate-300 text-slate-700 font-semibold text-xs rounded-lg hover:bg-slate-50 flex items-center space-x-1.5 shadow-xs"
           >
-            <Printer className="w-4 h-4 text-[#174A7E]" />
+            <Printer className="w-4 h-4 text-[#22223B]" />
             <span>Print / Save PDF</span>
           </button>
         )}
@@ -125,7 +125,7 @@ export default function CertificateView({ onNavigate }) {
               key={c.id}
               onClick={() => setSelectedCertIndex(idx)}
               className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
-                selectedCertIndex === idx ? 'bg-[#174A7E] text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                selectedCertIndex === idx ? 'bg-[#ABC4FF] text-[#22223B]' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
             >
               {c.course_code || `Certificate #${idx + 1}`}
@@ -137,19 +137,19 @@ export default function CertificateView({ onNavigate }) {
       {/* MAIN DISPLAY: ACTIVE CERTIFICATE OR NO CERTIFICATE EARNED STATE */}
       {activeCert ? (
         /* FORMAL CERTIFICATE DISPLAY BOX (Print Target ID) */
-        <div id="certificate-print-area" className="inst-card p-8 sm:p-12 bg-white border-4 border-[#174A7E] rounded-xl space-y-8 text-center shadow-lg relative overflow-hidden">
+        <div id="certificate-print-area" className="inst-card p-8 sm:p-12 bg-white border-4 border-[#22223B] rounded-xl space-y-8 text-center shadow-lg relative overflow-hidden">
           
           {/* Background Seal */}
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
-            <Award className="w-96 h-96 text-[#174A7E]" />
+            <Award className="w-96 h-96 text-[#22223B]" />
           </div>
 
           {/* Certificate Header */}
           <div className="space-y-2 relative">
-            <div className="w-16 h-16 mx-auto rounded-full bg-[#174A7E] text-white flex items-center justify-center font-extrabold text-2xl shadow-md border-2 border-blue-200">
+            <div className="w-16 h-16 mx-auto rounded-full bg-[#ABC4FF] text-[#22223B] flex items-center justify-center font-extrabold text-2xl shadow-md border-2 border-blue-200">
               CC
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-extrabold tracking-widest text-[#174A7E] uppercase pt-2">
+            <h2 className="text-2xl sm:text-3xl font-serif font-extrabold tracking-widest text-[#22223B] uppercase pt-2">
               Certificate of Completion
             </h2>
             <p className="text-xs text-slate-500 uppercase tracking-widest font-semibold">
@@ -160,13 +160,13 @@ export default function CertificateView({ onNavigate }) {
           {/* Recipient Details */}
           <div className="space-y-4 max-w-xl mx-auto relative">
             <p className="text-xs text-slate-600 italic">This is to certify that</p>
-            <p className="text-2xl sm:text-3xl font-bold text-slate-900 underline decoration-[#174A7E] decoration-2 underline-offset-8 uppercase">
+            <p className="text-2xl sm:text-3xl font-bold text-slate-900 underline decoration-[#22223B] decoration-2 underline-offset-8 uppercase">
               {activeCert.trainee_name || traineeName}
             </p>
             <p className="text-xs text-slate-600 leading-relaxed pt-2">
               has successfully fulfilled all required modules, diagnostic assessments, and competency standards for the capacity-building course in
             </p>
-            <p className="text-lg font-bold text-[#174A7E] bg-[#F0F7FF] py-2 px-4 rounded-lg border border-blue-200">
+            <p className="text-lg font-bold text-[#22223B] bg-[#EDF2FB] py-2 px-4 rounded-lg border border-blue-200">
               {activeCert.course_code ? `${activeCert.course_code}: ` : ''}{activeCert.course_title}
             </p>
           </div>
@@ -177,7 +177,7 @@ export default function CertificateView({ onNavigate }) {
             {/* Left: Certificate Code & Date */}
             <div className="space-y-1">
               <p className="text-slate-500 font-semibold">Certificate ID:</p>
-              <p className="font-mono font-bold text-[#174A7E] text-sm">{activeCert.certificate_code}</p>
+              <p className="font-mono font-bold text-[#22223B] text-sm">{activeCert.certificate_code}</p>
               <p className="text-[11px] text-slate-500">Issued On: <span className="font-semibold text-slate-800">{activeCert.issued_date}</span></p>
             </div>
 
@@ -204,7 +204,7 @@ export default function CertificateView({ onNavigate }) {
       ) : (
         /* NO CERTIFICATE EARNED YET STATE */
         <div className="no-print inst-card p-8 bg-white border border-slate-200 rounded-xl space-y-6 text-center shadow-xs">
-          <div className="w-14 h-14 mx-auto rounded-full bg-blue-50 text-[#174A7E] flex items-center justify-center border border-blue-200">
+          <div className="w-14 h-14 mx-auto rounded-full bg-blue-50 text-[#22223B] flex items-center justify-center border border-blue-200">
             <Lock className="w-7 h-7" />
           </div>
 
@@ -219,7 +219,7 @@ export default function CertificateView({ onNavigate }) {
           {currentCourse && (
             <div className="max-w-lg mx-auto p-4 bg-slate-50 border border-slate-200 rounded-lg text-left space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[#174A7E] bg-[#EAF2F8] px-2 py-0.5 rounded">
+                <span className="text-xs font-bold text-[#22223B] bg-[#EDF2FB] px-2 py-0.5 rounded">
                   {currentCourse.code}
                 </span>
                 <span className="text-xs font-semibold text-blue-800 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
@@ -228,12 +228,12 @@ export default function CertificateView({ onNavigate }) {
               </div>
               <div>
                 <p className="font-bold text-sm text-slate-900">{currentCourse.title}</p>
-                <p className="text-xs text-slate-500 mt-0.5">Current Progress: <span className="font-bold text-[#174A7E]">{currentCourse.progress}%</span></p>
+                <p className="text-xs text-slate-500 mt-0.5">Current Progress: <span className="font-bold text-[#22223B]">{currentCourse.progress}%</span></p>
               </div>
 
               {/* Mastery Progress Bar */}
               <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-                <div className="bg-[#174A7E] h-full rounded-full transition-all duration-300" style={{ width: `${currentCourse.progress}%` }} />
+                <div className="bg-[#ABC4FF] h-full rounded-full transition-all duration-300" style={{ width: `${currentCourse.progress}%` }} />
               </div>
             </div>
           )}
@@ -241,7 +241,7 @@ export default function CertificateView({ onNavigate }) {
           <div className="pt-2">
             <button
               onClick={() => onNavigate && onNavigate('roadmap')}
-              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-[#174A7E] hover:bg-[#12395F] text-white text-xs font-semibold rounded-lg shadow-sm transition-colors"
+              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-[#ABC4FF] hover:bg-[#B6CCFE] text-[#22223B] text-xs font-semibold rounded-lg shadow-sm transition-colors"
             >
               <BookOpen className="w-4 h-4" />
               <span>Continue Learning in Roadmap</span>
@@ -254,7 +254,7 @@ export default function CertificateView({ onNavigate }) {
       {/* Public Certificate Verification Tool Box (Screen Only) */}
       <div className="no-print inst-card p-6 bg-white border border-slate-200 rounded-xl space-y-4 shadow-xs">
         <div className="flex items-center space-x-2 text-slate-900">
-          <ShieldCheck className="w-5 h-5 text-[#174A7E]" />
+          <ShieldCheck className="w-5 h-5 text-[#22223B]" />
           <h3 className="text-sm font-bold">Public Certificate Verification Lookup</h3>
         </div>
 
@@ -264,12 +264,12 @@ export default function CertificateView({ onNavigate }) {
             value={verifyCode}
             onChange={(e) => setVerifyCode(e.target.value)}
             placeholder="Enter Certificate Code (e.g. CC-AIML-2026-000184)"
-            className="flex-1 p-2.5 border border-slate-300 rounded-lg text-xs font-mono focus:outline-none focus:ring-1 focus:ring-[#174A7E]"
+            className="flex-1 p-2.5 border border-slate-300 rounded-lg text-xs font-mono focus:outline-none focus:ring-1 focus:ring-[#22223B]"
           />
           <button
             onClick={handleVerify}
             disabled={searching}
-            className="px-5 py-2.5 bg-[#174A7E] hover:bg-[#12395F] text-white font-semibold text-xs rounded-lg transition-colors flex items-center justify-center space-x-1.5"
+            className="px-5 py-2.5 bg-[#ABC4FF] hover:bg-[#B6CCFE] text-[#22223B] font-semibold text-xs rounded-lg transition-colors flex items-center justify-center space-x-1.5"
           >
             <Search className="w-4 h-4" />
             <span>Verify Certificate</span>

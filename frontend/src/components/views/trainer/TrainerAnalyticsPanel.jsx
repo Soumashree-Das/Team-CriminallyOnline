@@ -50,8 +50,8 @@ export default function TrainerAnalyticsPanel() {
 
   if (loading) {
     return (
-      <div className="bg-white border border-[#E5E5E2] rounded-xl p-12 text-center shadow-sm">
-        <RefreshCw className="w-8 h-8 text-[#174A7E] animate-spin mx-auto mb-3" />
+      <div className="bg-white border border-[#D7E3FC] rounded-xl p-12 text-center shadow-sm">
+        <RefreshCw className="w-8 h-8 text-[#22223B] animate-spin mx-auto mb-3" />
         <p className="text-sm font-semibold text-gray-700">Loading trainer rating analytics...</p>
       </div>
     );
@@ -59,13 +59,13 @@ export default function TrainerAnalyticsPanel() {
 
   if (error) {
     return (
-      <div className="bg-white border border-[#E5E5E2] rounded-xl p-8 text-center shadow-sm">
+      <div className="bg-white border border-[#D7E3FC] rounded-xl p-8 text-center shadow-sm">
         <AlertCircle className="w-10 h-10 text-red-500 mx-auto mb-2" />
         <h3 className="text-sm font-bold text-gray-900">Failed to Load Analytics</h3>
         <p className="text-xs text-gray-500 mt-1 max-w-md mx-auto">{error}</p>
         <button
           onClick={fetchRatings}
-          className="mt-4 px-4 py-2 bg-[#174A7E] text-white text-xs font-semibold rounded-lg hover:bg-[#12395F] transition-colors"
+          className="mt-4 px-4 py-2 bg-[#ABC4FF] text-[#22223B] text-xs font-semibold rounded-lg hover:bg-[#B6CCFE] transition-colors"
         >
           Retry
         </button>
@@ -76,15 +76,15 @@ export default function TrainerAnalyticsPanel() {
   const { average_rating, total_ratings, rating_distribution, recent_feedback } = ratingData || {};
 
   return (
-    <div className="h-full w-full min-h-0 flex flex-col overflow-hidden space-y-3 bg-[#F4F1EA]">
+    <div className="h-full w-full min-h-0 flex flex-col overflow-hidden space-y-3 bg-[#EDF2FB]">
       {/* Header Banner Hero */}
-      <div className="shrink-0 bg-[#EBE6DD] border border-[#DDD5C7] rounded-2xl p-4 shadow-sm flex items-center justify-between">
+      <div className="shrink-0 bg-[#EDF2FB] border border-[#D7E3FC] rounded-2xl p-4 shadow-sm flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-lg bg-[#4A3E2A] text-amber-200 flex items-center justify-center font-bold shrink-0">
+          <div className="w-9 h-9 rounded-lg bg-[#ABC4FF] text-[#22223B] flex items-center justify-center font-bold shrink-0">
             <Award className="w-5 h-5" />
           </div>
           <div>
-            <div className="inline-flex items-center space-x-1 bg-[#DDD5C7] text-[#4A3E2A] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CCC2B2] mb-0.5">
+            <div className="inline-flex items-center space-x-1 bg-[#D7E3FC] text-[#22223B] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CCDBFD] mb-0.5">
               <span>Quality Assurance</span>
             </div>
             <h2 className="text-base font-extrabold text-zinc-900 leading-none">Educator Ratings & Quality Analytics</h2>
@@ -95,17 +95,17 @@ export default function TrainerAnalyticsPanel() {
         </div>
         <button
           onClick={fetchRatings}
-          className="p-2 border border-[#DDD6C9] rounded-lg text-zinc-700 bg-white hover:bg-zinc-50 transition-colors shrink-0"
+          className="p-2 border border-[#CCDBFD] rounded-lg text-zinc-700 bg-white hover:bg-zinc-50 transition-colors shrink-0"
           title="Refresh analytics"
         >
-          <RefreshCw className="w-4 h-4 text-[#4A3E2A]" />
+          <RefreshCw className="w-4 h-4 text-[#22223B]" />
         </button>
       </div>
 
       {/* Top Level Score Summary Cards */}
       <div className="shrink-0 grid grid-cols-1 md:grid-cols-3 gap-3">
         {/* Average Rating Card */}
-        <div className="bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl p-4 shadow-xs flex items-center justify-between">
+        <div className="bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl p-4 shadow-xs flex items-center justify-between">
           <div>
             <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">Overall Rating</p>
             <div className="flex items-baseline space-x-2 mt-1">
@@ -114,13 +114,13 @@ export default function TrainerAnalyticsPanel() {
             </div>
             <div className="mt-2">{renderStars(average_rating || 0)}</div>
           </div>
-          <div className="w-11 h-11 rounded-xl bg-[#FBF3D5] text-[#5C4610] border border-[#F2E3A8] flex items-center justify-center shrink-0 shadow-xs">
-            <Star className="w-5 h-5 fill-[#5C4610]" />
+          <div className="w-11 h-11 rounded-xl bg-[#EDF2FB] text-[#22223B] border border-[#D7E3FC] flex items-center justify-center shrink-0 shadow-xs">
+            <Star className="w-5 h-5 fill-[#22223B]" />
           </div>
         </div>
 
         {/* Total Reviews Card */}
-        <div className="bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl p-4 shadow-xs flex items-center justify-between">
+        <div className="bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl p-4 shadow-xs flex items-center justify-between">
           <div>
             <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">Total Submissions</p>
             <p className="text-3xl font-black text-zinc-900 mt-1">{total_ratings || 0}</p>
@@ -129,13 +129,13 @@ export default function TrainerAnalyticsPanel() {
               <span>Verified Learner Responses</span>
             </p>
           </div>
-          <div className="w-11 h-11 rounded-xl bg-[#E8F0F8] text-[#1E3A5F] border border-[#C3D7ED] flex items-center justify-center shrink-0 shadow-xs">
+          <div className="w-11 h-11 rounded-xl bg-[#E2EAFC] text-[#22223B] border border-[#D7E3FC] flex items-center justify-center shrink-0 shadow-xs">
             <MessageCircle className="w-5 h-5" />
           </div>
         </div>
 
         {/* Educator Standing Card */}
-        <div className="bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl p-4 shadow-xs flex items-center justify-between">
+        <div className="bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl p-4 shadow-xs flex items-center justify-between">
           <div>
             <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">Institutional Standing</p>
             <p className="text-base font-extrabold text-zinc-900 mt-1">
@@ -145,7 +145,7 @@ export default function TrainerAnalyticsPanel() {
               Capacity Connect Quality Assurance
             </p>
           </div>
-          <div className="w-11 h-11 rounded-xl bg-[#E3EBE3] text-[#264A26] border border-[#C4DAC4] flex items-center justify-center shrink-0 shadow-xs">
+          <div className="w-11 h-11 rounded-xl bg-[#D7E3FC] text-[#22223B] border border-[#CCDBFD] flex items-center justify-center shrink-0 shadow-xs">
             <UserCheck className="w-5 h-5" />
           </div>
         </div>
@@ -154,7 +154,7 @@ export default function TrainerAnalyticsPanel() {
       {/* Star Breakdown & Detailed Feedback */}
       <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-3 gap-4 overflow-hidden">
         {/* Rating Breakdown Bar Chart */}
-        <div className="bg-white border border-[#E5E5E2] rounded-xl p-4 shadow-sm lg:col-span-1 flex flex-col justify-center">
+        <div className="bg-white border border-[#D7E3FC] rounded-xl p-4 shadow-sm lg:col-span-1 flex flex-col justify-center">
           <h3 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-3">Rating Distribution</h3>
           <div className="space-y-2.5">
             {[5, 4, 3, 2, 1].map((stars) => {
@@ -180,7 +180,7 @@ export default function TrainerAnalyticsPanel() {
         </div>
 
         {/* Learner Feedback List */}
-        <div className="bg-white border border-[#E5E5E2] rounded-xl p-4 shadow-sm lg:col-span-2 flex flex-col min-h-0 overflow-hidden">
+        <div className="bg-white border border-[#D7E3FC] rounded-xl p-4 shadow-sm lg:col-span-2 flex flex-col min-h-0 overflow-hidden">
           <h3 className="shrink-0 text-xs font-bold uppercase tracking-wider text-gray-800 mb-3">Recent Learner Feedback</h3>
           {!recent_feedback || recent_feedback.length === 0 ? (
             <div className="flex-1 min-h-0 overflow-y-auto">
@@ -193,7 +193,7 @@ export default function TrainerAnalyticsPanel() {
           ) : (
             <div className="flex-1 min-h-0 overflow-y-auto pr-1 space-y-3">
               {recent_feedback.map((item) => (
-                <div key={item.id} className="p-3.5 rounded-xl border border-[#E5E5E2] bg-[#F7F7F5]/50 hover:bg-[#F7F7F5] transition-colors">
+                <div key={item.id} className="p-3.5 rounded-xl border border-[#D7E3FC] bg-[#EDF2FB]/50 hover:bg-[#EDF2FB] transition-colors">
                   <div className="flex items-start justify-between">
                     <div>
                       <span className="font-bold text-xs text-gray-900">{item.trainee_name}</span>

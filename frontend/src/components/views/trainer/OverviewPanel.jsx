@@ -52,8 +52,8 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
 
   if (loading) {
     return (
-      <div className="p-12 text-center text-gray-500 bg-white border border-[#E5E5E2] rounded-xl shadow-sm">
-        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#174A7E]" />
+      <div className="p-12 text-center text-gray-500 bg-white border border-[#D7E3FC] rounded-xl shadow-sm">
+        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#22223B]" />
         <p className="text-xs font-semibold text-gray-700">Loading Educator Workspace Analytics...</p>
       </div>
     );
@@ -71,17 +71,17 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
   }
 
   return (
-    <div className="h-full w-full min-h-0 flex flex-col overflow-hidden space-y-3 bg-[#F4F1EA]">
+    <div className="h-full w-full min-h-0 flex flex-col overflow-hidden space-y-3 bg-[#EDF2FB]">
       
       {/* Header Banner Hero */}
-      <div className="shrink-0 bg-[#EBE6DD] border border-[#DDD5C7] rounded-2xl p-4 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+      <div className="shrink-0 bg-[#EDF2FB] border border-[#D7E3FC] rounded-2xl p-4 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
         <div>
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg bg-[#4A3E2A] text-amber-200 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#ABC4FF] text-[#22223B] flex items-center justify-center shrink-0">
               <Users className="w-4 h-4" />
             </div>
             <div>
-              <div className="inline-flex items-center space-x-1 bg-[#DDD5C7] text-[#4A3E2A] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CCC2B2] mb-0.5">
+              <div className="inline-flex items-center space-x-1 bg-[#D7E3FC] text-[#22223B] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CCDBFD] mb-0.5">
                 <span>Executive Command Center</span>
               </div>
               <h2 className="text-base font-extrabold text-zinc-900 leading-none">Cohort Performance & Intelligence Overview</h2>
@@ -98,7 +98,7 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
           <select
             value={selectedCourseId}
             onChange={(e) => setSelectedCourseId(Number(e.target.value))}
-            className="p-1.5 bg-white border border-[#DDD6C9] rounded-lg text-xs font-semibold text-zinc-900 focus:outline-none focus:border-[#4A3E2A]"
+            className="p-1.5 bg-white border border-[#CCDBFD] rounded-lg text-xs font-semibold text-zinc-900 focus:outline-none focus:border-[#22223B]"
           >
             {courses.map((c) => (
               <option key={c.id} value={c.id}>
@@ -115,9 +115,9 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
         {/* Card 1: Active Trainees */}
         <div 
           onClick={() => onNavigateSubTab('enrollments')}
-          className="p-3.5 bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl flex items-center space-x-3.5 shadow-sm cursor-pointer hover:border-[#4A3E2A] transition-all"
+          className="p-3.5 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl flex items-center space-x-3.5 shadow-sm cursor-pointer hover:border-[#22223B] transition-all"
         >
-          <div className="w-10 h-10 rounded-lg bg-[#E3EBE3] text-[#264A26] flex items-center justify-center font-bold shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-[#D7E3FC] text-[#22223B] flex items-center justify-center font-bold shrink-0">
             <Users className="w-5 h-5" />
           </div>
           <div>
@@ -130,9 +130,9 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
         {/* Card 2: Pending Approvals */}
         <div 
           onClick={() => onNavigateSubTab('enrollments')}
-          className="p-3.5 bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl flex items-center space-x-3.5 shadow-sm cursor-pointer hover:border-[#4A3E2A] transition-all"
+          className="p-3.5 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl flex items-center space-x-3.5 shadow-sm cursor-pointer hover:border-[#22223B] transition-all"
         >
-          <div className="w-10 h-10 rounded-lg bg-[#FBF3D5] text-[#5C4610] flex items-center justify-center font-bold shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-[#EDF2FB] text-[#22223B] flex items-center justify-center font-bold shrink-0">
             <Clock className="w-5 h-5" />
           </div>
           <div>
@@ -145,14 +145,14 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
         {/* Card 3: Avg Cohort Mastery */}
         <div 
           onClick={() => onNavigateSubTab('analytics')}
-          className="p-3.5 bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl flex items-center space-x-3.5 shadow-sm cursor-pointer hover:border-[#4A3E2A] transition-all"
+          className="p-3.5 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl flex items-center space-x-3.5 shadow-sm cursor-pointer hover:border-[#22223B] transition-all"
         >
-          <div className="w-10 h-10 rounded-lg bg-[#E8F0F8] text-[#1E3A5F] flex items-center justify-center font-bold shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-[#E2EAFC] text-[#22223B] flex items-center justify-center font-bold shrink-0">
             <CheckCircle2 className="w-5 h-5" />
           </div>
           <div>
             <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Avg Concept Mastery</p>
-            <p className="text-xl font-black text-[#1E3A5F] leading-tight">{overview?.avg_mastery_percentage || 0}%</p>
+            <p className="text-xl font-black text-[#22223B] leading-tight">{overview?.avg_mastery_percentage || 0}%</p>
             <p className="text-[10px] text-zinc-500">KG baseline metric &rarr;</p>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
         {/* Card 4: At-Risk Learners */}
         <div 
           onClick={() => onNavigateSubTab('analytics')}
-          className="p-3.5 bg-[#FAF8F5] border border-[#E8E3DA] rounded-xl flex items-center space-x-3.5 shadow-sm cursor-pointer hover:border-red-400 transition-all"
+          className="p-3.5 bg-[#EDF2FB] border border-[#D7E3FC] rounded-xl flex items-center space-x-3.5 shadow-sm cursor-pointer hover:border-red-400 transition-all"
         >
           <div className="w-10 h-10 rounded-lg bg-red-50 text-red-700 flex items-center justify-center font-bold shrink-0">
             <AlertTriangle className="w-5 h-5" />
@@ -175,15 +175,15 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
       </div>
 
       {/* At-Risk Learner Intervention Panel */}
-      <div className="flex-1 min-h-0 flex flex-col p-4 bg-[#FAF8F5] border border-[#E8E3DA] rounded-2xl shadow-sm overflow-hidden">
-        <div className="shrink-0 flex items-center justify-between border-b border-[#E8E3DA] pb-3 mb-3">
+      <div className="flex-1 min-h-0 flex flex-col p-4 bg-[#EDF2FB] border border-[#D7E3FC] rounded-2xl shadow-sm overflow-hidden">
+        <div className="shrink-0 flex items-center justify-between border-b border-[#D7E3FC] pb-3 mb-3">
           <div className="flex items-center space-x-2 text-zinc-900">
             <AlertTriangle className="w-4 h-4 text-red-700" />
             <h3 className="text-xs font-extrabold uppercase tracking-wider">At-Risk Learners Needing Roadmap Intervention</h3>
           </div>
           <button
             onClick={() => onNavigateSubTab('analytics')}
-            className="text-xs font-bold text-[#4A3E2A] hover:underline flex items-center space-x-1"
+            className="text-xs font-bold text-[#22223B] hover:underline flex items-center space-x-1"
           >
             <span>View Competency Heatmap</span>
             <ChevronRight className="w-3.5 h-3.5" />
@@ -192,9 +192,9 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
 
         <div className="flex-1 min-h-0 overflow-y-auto pr-1">
           {atRiskTrainees.length > 0 ? (
-            <div className="divide-y divide-[#E8E3DA]">
+            <div className="divide-y divide-[#D7E3FC]">
               {atRiskTrainees.map((trainee) => (
-                <div key={trainee.trainee_id} className="py-2.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 hover:bg-[#F4F1EA] px-2.5 rounded-xl transition-colors">
+                <div key={trainee.trainee_id} className="py-2.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 hover:bg-[#EDF2FB] px-2.5 rounded-xl transition-colors">
                   <div>
                     <div className="flex items-center space-x-2">
                       <p className="text-xs font-bold text-zinc-900">{trainee.full_name}</p>
@@ -213,7 +213,7 @@ export default function OverviewPanel({ onNavigateSubTab, onSelectTraineeForOver
                       }
                       onNavigateSubTab('overrides');
                     }}
-                    className="px-3 py-1.5 bg-[#18181B] text-white font-bold text-xs rounded-lg hover:bg-zinc-800 transition-colors flex items-center space-x-1 shrink-0 shadow-sm"
+                    className="px-3 py-1.5 bg-[#ABC4FF] text-[#22223B] font-bold text-xs rounded-lg hover:bg-[#B6CCFE] transition-colors flex items-center space-x-1 shrink-0 shadow-sm"
                   >
                     <span>Override Roadmap</span>
                   </button>

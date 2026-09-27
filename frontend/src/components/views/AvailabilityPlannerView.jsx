@@ -71,8 +71,8 @@ export default function AvailabilityPlannerView({ onNavigate }) {
     <div className="max-w-4xl mx-auto space-y-6">
       
       {/* Header Banner */}
-      <div className="inst-card p-6 bg-white border border-[#E5E5E2] rounded-xl space-y-3">
-        <div className="flex items-center space-x-2 text-[#174A7E]">
+      <div className="inst-card p-6 bg-white border border-[#D7E3FC] rounded-xl space-y-3">
+        <div className="flex items-center space-x-2 text-[#22223B]">
           <Clock className="w-6 h-6" />
           <h1 className="text-xl font-bold text-gray-900">Learning Availability Planner</h1>
         </div>
@@ -85,7 +85,7 @@ export default function AvailabilityPlannerView({ onNavigate }) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Left Column (2 Cols): Daily Availability Sliders */}
-        <div className="lg:col-span-2 inst-card p-6 bg-white border border-[#E5E5E2] rounded-xl space-y-5">
+        <div className="lg:col-span-2 inst-card p-6 bg-white border border-[#D7E3FC] rounded-xl space-y-5">
           <h2 className="text-sm font-bold text-gray-900 border-b border-gray-100 pb-2">
             Weekly Study Availability Schedule
           </h2>
@@ -98,7 +98,7 @@ export default function AvailabilityPlannerView({ onNavigate }) {
                 <div key={day} className="space-y-1">
                   <div className="flex justify-between text-xs font-semibold text-gray-800">
                     <span>{fullDayName}</span>
-                    <span className="text-[#174A7E] bg-[#EAF2F8] px-2.5 py-0.5 rounded font-bold">{val} hrs / day</span>
+                    <span className="text-[#22223B] bg-[#EDF2FB] px-2.5 py-0.5 rounded font-bold">{val} hrs / day</span>
                   </div>
                   <input
                     type="range"
@@ -107,7 +107,7 @@ export default function AvailabilityPlannerView({ onNavigate }) {
                     step="0.5"
                     value={val}
                     onChange={(e) => handleSliderChange(day, e.target.value)}
-                    className="w-full accent-[#174A7E] h-2 bg-gray-200 rounded-lg cursor-pointer"
+                    className="w-full accent-[#22223B] h-2 bg-gray-200 rounded-lg cursor-pointer"
                   />
                 </div>
               );
@@ -118,9 +118,9 @@ export default function AvailabilityPlannerView({ onNavigate }) {
             <button
               onClick={handleSavePlanner}
               disabled={saving}
-              className="w-full sm:w-auto px-5 py-2.5 bg-[#174A7E] hover:bg-[#12395F] text-white font-semibold text-xs rounded-lg transition-colors flex items-center justify-center space-x-2 shadow-xs"
+              className="w-full sm:w-auto px-5 py-2.5 bg-[#ABC4FF] hover:bg-[#B6CCFE] text-[#22223B] font-semibold text-xs rounded-lg transition-colors flex items-center justify-center space-x-2 shadow-xs"
             >
-              <Sparkles className="w-4 h-4 text-amber-300" />
+              <Sparkles className="w-4 h-4 text-[#22223B]" />
               <span>{saving ? 'Saving & Generating...' : 'Calculate & Update Roadmap'}</span>
             </button>
 
@@ -136,39 +136,39 @@ export default function AvailabilityPlannerView({ onNavigate }) {
         {/* Right Column (1 Col): Live Calculation Summary (Deep Navy High Contrast Card) */}
         <div className="space-y-4">
           
-          <div className="p-5 bg-[#174A7E] text-white rounded-xl border border-[#12395F] space-y-4 shadow-md">
-            <div className="flex items-center space-x-2 text-blue-200">
-              <Calendar className="w-5 h-5 text-blue-300" />
-              <h3 className="text-sm font-bold text-white">Capacity Calculation</h3>
+          <div className="p-5 bg-white text-[#22223B] rounded-xl border border-[#ABC4FF] space-y-4 shadow-md">
+            <div className="flex items-center space-x-2 text-[#22223B]/70">
+              <Calendar className="w-5 h-5 text-[#ABC4FF]" />
+              <h3 className="text-sm font-bold text-[#22223B]">Capacity Calculation</h3>
             </div>
 
-            <div className="space-y-3 border-t border-blue-400/30 pt-3 text-xs">
+            <div className="space-y-3 border-t border-[#D7E3FC] pt-3 text-xs">
               <div className="flex justify-between items-center">
-                <span className="text-blue-100 font-medium">Weekly Capacity:</span>
-                <span className="font-bold text-white text-xs bg-blue-900/60 px-2.5 py-1 rounded border border-blue-400/30">
+                <span className="text-[#22223B]/70 font-medium">Weekly Capacity:</span>
+                <span className="font-bold text-[#22223B] text-xs bg-[#E2EAFC] px-2.5 py-1 rounded border border-[#ABC4FF]">
                   {totalWeeklyCapacity} hrs / week
                 </span>
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-blue-100 font-medium">Course Total Requirement:</span>
-                <span className="font-semibold text-white">{courseRequiredHours} hours</span>
+                <span className="text-[#22223B]/70 font-medium">Course Total Requirement:</span>
+                <span className="font-semibold text-[#22223B]">{courseRequiredHours} hours</span>
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-blue-100 font-medium">Estimated Duration:</span>
+                <span className="text-[#22223B]/70 font-medium">Estimated Duration:</span>
                 <span className="font-extrabold text-emerald-300 text-sm">{estimatedWeeks} Weeks</span>
               </div>
             </div>
 
-            <div className="pt-3 border-t border-blue-400/30 text-center bg-blue-950/50 p-3 rounded-lg border border-blue-400/20">
-              <p className="text-[10px] text-blue-200 font-bold uppercase tracking-wider">Estimated Completion Date</p>
-              <p className="text-lg font-extrabold text-white mt-0.5">{dateFormatted}</p>
+            <div className="pt-3 border-t border-[#D7E3FC] text-center bg-[#EDF2FB] p-3 rounded-lg border border-[#D7E3FC]">
+              <p className="text-[10px] text-[#22223B]/70 font-bold uppercase tracking-wider">Estimated Completion Date</p>
+              <p className="text-lg font-extrabold text-[#22223B] mt-0.5">{dateFormatted}</p>
             </div>
 
             <button
               onClick={() => onNavigate('roadmap')}
-              className="w-full py-2.5 bg-white text-[#174A7E] hover:bg-blue-50 font-bold text-xs rounded-lg transition-colors flex items-center justify-center space-x-1.5 shadow"
+              className="w-full py-2.5 bg-white text-[#22223B] hover:bg-blue-50 font-bold text-xs rounded-lg transition-colors flex items-center justify-center space-x-1.5 shadow"
             >
               <span>View Personalized Roadmap</span>
               <ArrowRight className="w-4 h-4" />

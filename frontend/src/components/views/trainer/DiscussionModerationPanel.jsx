@@ -114,18 +114,18 @@ export default function DiscussionModerationPanel() {
   };
 
   return (
-    <div className="h-full w-full min-h-0 flex flex-col overflow-hidden space-y-3 bg-[#F4F1EA]">
+    <div className="h-full w-full min-h-0 flex flex-col overflow-hidden space-y-3 bg-[#EDF2FB]">
       {toast && <Toast type={toast.type} message={toast.message} onClose={() => setToast(null)} />}
 
       {/* Header & Filter Controls Hero */}
-      <div className="shrink-0 bg-[#EBE6DD] border border-[#DDD5C7] rounded-2xl p-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div className="shrink-0 bg-[#EDF2FB] border border-[#D7E3FC] rounded-2xl p-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
         <div>
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg bg-[#4A3E2A] text-amber-200 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#ABC4FF] text-[#22223B] flex items-center justify-center shrink-0">
               <MessageSquare className="w-4 h-4" />
             </div>
             <div>
-              <div className="inline-flex items-center space-x-1 bg-[#DDD5C7] text-[#4A3E2A] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CCC2B2] mb-0.5">
+              <div className="inline-flex items-center space-x-1 bg-[#D7E3FC] text-[#22223B] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CCDBFD] mb-0.5">
                 <span>Community Moderation</span>
               </div>
               <h2 className="text-base font-extrabold text-zinc-900 leading-none">Discussion Forum Moderation</h2>
@@ -143,7 +143,7 @@ export default function DiscussionModerationPanel() {
             <select
               value={selectedCourseId}
               onChange={(e) => { setSelectedCourseId(e.target.value); setPage(1); }}
-              className="text-xs border border-[#DDD6C9] rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#4A3E2A] bg-white font-semibold text-zinc-900"
+              className="text-xs border border-[#CCDBFD] rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#22223B] bg-white font-semibold text-zinc-900"
             >
               <option value="">All Assigned Courses</option>
               {courses.map(c => (
@@ -157,11 +157,11 @@ export default function DiscussionModerationPanel() {
             onClick={() => { setFlaggedOnly(!flaggedOnly); setPage(1); }}
             className={`text-xs px-3 py-1.5 rounded-lg border font-bold flex items-center space-x-1.5 transition-all ${
               flaggedOnly
-                ? 'bg-[#FBF3D5] border-[#F2E3A8] text-[#5C4610]'
-                : 'bg-white border-[#DDD6C9] text-zinc-700 hover:bg-zinc-50'
+                ? 'bg-[#EDF2FB] border-[#D7E3FC] text-[#22223B]'
+                : 'bg-white border-[#CCDBFD] text-zinc-700 hover:bg-zinc-50'
             }`}
           >
-            <Flag className={`w-3.5 h-3.5 ${flaggedOnly ? 'fill-[#5C4610] text-[#5C4610]' : 'text-zinc-400'}`} />
+            <Flag className={`w-3.5 h-3.5 ${flaggedOnly ? 'fill-[#22223B] text-[#22223B]' : 'text-zinc-400'}`} />
             <span>Flagged Only</span>
           </button>
         </div>
@@ -169,9 +169,9 @@ export default function DiscussionModerationPanel() {
 
       {/* Main Content Area */}
       {loading ? (
-        <div className="flex-1 min-h-0 flex items-center justify-center text-zinc-500 bg-[#FAF8F5] border border-[#E8E3DA] rounded-2xl">
+        <div className="flex-1 min-h-0 flex items-center justify-center text-zinc-500 bg-[#EDF2FB] border border-[#D7E3FC] rounded-2xl">
           <div className="text-center">
-            <RefreshCw className="w-7 h-7 text-[#4A3E2A] animate-spin mx-auto mb-2" />
+            <RefreshCw className="w-7 h-7 text-[#22223B] animate-spin mx-auto mb-2" />
             <p className="text-xs font-bold text-zinc-700">Loading discussion threads...</p>
           </div>
         </div>
@@ -193,17 +193,17 @@ export default function DiscussionModerationPanel() {
           />
         </div>
       ) : (
-        <div className="flex-1 min-h-0 flex flex-col bg-white border border-[#E8E3DA] rounded-2xl p-4 shadow-sm overflow-hidden">
+        <div className="flex-1 min-h-0 flex flex-col bg-white border border-[#D7E3FC] rounded-2xl p-4 shadow-sm overflow-hidden">
           <div className="flex-1 min-h-0 overflow-y-auto space-y-3 pr-1">
             {discussions.map((post) => (
               <div
                 key={post.id}
-                className={`bg-[#FAF8F5] border rounded-xl p-4 shadow-xs transition-all ${
+                className={`bg-[#EDF2FB] border rounded-xl p-4 shadow-xs transition-all ${
                   post.is_pinned
-                    ? 'border-[#C5A880] bg-[#FAF6F0]'
+                    ? 'border-[#ABC4FF] bg-[#EDF2FB]'
                     : post.is_flagged
-                    ? 'border-[#F2E3A8] bg-[#FBF8EE]'
-                    : 'border-[#E8E3DA]'
+                    ? 'border-[#D7E3FC] bg-[#EDF2FB]'
+                    : 'border-[#D7E3FC]'
                 }`}
               >
                 {/* Thread Header */}
@@ -211,22 +211,22 @@ export default function DiscussionModerationPanel() {
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-2 mb-1.5">
                       {post.is_pinned && (
-                        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#18181B] text-[#D4AF37] text-[10px] font-bold border border-zinc-700">
+                        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#ABC4FF] text-[#22223B] text-[10px] font-bold border border-zinc-700">
                           <Pin className="w-3 h-3 fill-current" />
                           <span>Pinned</span>
                         </span>
                       )}
                       {post.is_flagged && (
-                        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#FBF3D5] text-[#5C4610] text-[10px] font-bold border border-[#F2E3A8]">
+                        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#EDF2FB] text-[#22223B] text-[10px] font-bold border border-[#D7E3FC]">
                           <Flag className="w-3 h-3 fill-current" />
                           <span>Flagged</span>
                         </span>
                       )}
-                      <span className="px-2 py-0.5 rounded-md bg-[#EFECE6] text-zinc-700 text-[10px] font-bold border border-[#DDD8CE]">
+                      <span className="px-2 py-0.5 rounded-md bg-[#EDF2FB] text-zinc-700 text-[10px] font-bold border border-[#D7E3FC]">
                         {post.course_title}
                       </span>
                       {post.concept_title && (
-                        <span className="px-2 py-0.5 rounded-md bg-blue-50 text-[#1E3A5F] text-[10px] font-semibold border border-blue-100">
+                        <span className="px-2 py-0.5 rounded-md bg-blue-50 text-[#22223B] text-[10px] font-semibold border border-blue-100">
                           {post.concept_title}
                         </span>
                       )}
@@ -250,8 +250,8 @@ export default function DiscussionModerationPanel() {
                       onClick={() => handleTogglePin(post)}
                       className={`p-1.5 rounded-lg border text-xs font-semibold transition-colors ${
                         post.is_pinned
-                          ? 'bg-[#174A7E] text-white border-[#174A7E]'
-                          : 'bg-white border-[#E5E5E2] text-gray-600 hover:bg-gray-50'
+                          ? 'bg-[#ABC4FF] text-[#22223B] border-[#22223B]'
+                          : 'bg-white border-[#D7E3FC] text-gray-600 hover:bg-gray-50'
                       }`}
                       title={post.is_pinned ? 'Unpin thread' : 'Pin thread to top'}
                     >
@@ -263,7 +263,7 @@ export default function DiscussionModerationPanel() {
                       className={`p-1.5 rounded-lg border text-xs font-semibold transition-colors ${
                         post.is_flagged
                           ? 'bg-amber-500 text-white border-amber-500'
-                          : 'bg-white border-[#E5E5E2] text-gray-600 hover:bg-gray-50'
+                          : 'bg-white border-[#D7E3FC] text-gray-600 hover:bg-gray-50'
                       }`}
                       title={post.is_flagged ? 'Unflag thread' : 'Flag for review'}
                     >
@@ -272,7 +272,7 @@ export default function DiscussionModerationPanel() {
 
                     <button
                       onClick={() => setDeleteConfirmPost(post)}
-                      className="p-1.5 rounded-lg border border-[#E5E5E2] text-gray-500 hover:text-red-600 hover:bg-red-50 transition-colors"
+                      className="p-1.5 rounded-lg border border-[#D7E3FC] text-gray-500 hover:text-red-600 hover:bg-red-50 transition-colors"
                       title="Delete thread"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -281,7 +281,7 @@ export default function DiscussionModerationPanel() {
                 </div>
 
                 {/* Thread Content */}
-                <div className="mt-2 text-xs text-gray-800 leading-relaxed bg-[#F7F7F5] p-2.5 rounded-lg border border-[#E5E5E2]/80">
+                <div className="mt-2 text-xs text-gray-800 leading-relaxed bg-[#EDF2FB] p-2.5 rounded-lg border border-[#D7E3FC]/80">
                   {post.content}
                 </div>
 
@@ -307,7 +307,7 @@ export default function DiscussionModerationPanel() {
                             <div className="flex items-center space-x-1.5">
                               <span className="text-gray-900 font-bold">{reply.author_name}</span>
                               {reply.author_role === 'trainer' && (
-                                <span className="bg-[#174A7E] text-white px-1 py-0.2 text-[8px] rounded font-bold uppercase">
+                                <span className="bg-[#ABC4FF] text-[#22223B] px-1 py-0.2 text-[8px] rounded font-bold uppercase">
                                   Trainer
                                 </span>
                               )}
@@ -328,12 +328,12 @@ export default function DiscussionModerationPanel() {
                       onChange={(e) => setReplyInput({ ...replyInput, [post.id]: e.target.value })}
                       onKeyDown={(e) => { if (e.key === 'Enter') handleSendReply(post.id, post.course_id); }}
                       placeholder="Write an official trainer response..."
-                      className="flex-1 text-xs border border-[#E5E5E2] rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#174A7E] bg-white"
+                      className="flex-1 text-xs border border-[#D7E3FC] rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#22223B] bg-white"
                     />
                     <button
                       onClick={() => handleSendReply(post.id, post.course_id)}
                       disabled={submittingReply || !replyInput[post.id]?.trim()}
-                      className="px-3 py-1.5 bg-[#174A7E] text-white text-xs font-semibold rounded-lg hover:bg-[#12395F] disabled:opacity-50 transition-colors flex items-center space-x-1"
+                      className="px-3 py-1.5 bg-[#ABC4FF] text-[#22223B] text-xs font-semibold rounded-lg hover:bg-[#B6CCFE] disabled:opacity-50 transition-colors flex items-center space-x-1"
                     >
                       <Send className="w-3.5 h-3.5" />
                       <span>Reply</span>

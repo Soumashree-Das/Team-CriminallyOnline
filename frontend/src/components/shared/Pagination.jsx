@@ -8,7 +8,7 @@ export default function Pagination({ page, totalPages, onPageChange, totalItems,
   const endItem = Math.min(page * limit, totalItems);
 
   return (
-    <div className="flex items-center justify-between pt-4 border-t border-[#E5E5E2] text-xs text-gray-600">
+    <div className="flex items-center justify-between pt-4 border-t border-[#D7E3FC] text-xs text-gray-600">
       <div>
         Showing <span className="font-semibold text-gray-900">{startItem}</span> to <span className="font-semibold text-gray-900">{endItem}</span> of <span className="font-semibold text-gray-900">{totalItems}</span> items
       </div>

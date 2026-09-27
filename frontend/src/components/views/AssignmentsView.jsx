@@ -49,7 +49,7 @@ export default function AssignmentsView() {
   if (loading) {
     return (
       <div className="p-12 text-center text-gray-500">
-        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#174A7E]" />
+        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-[#22223B]" />
         <p className="text-sm font-medium">Fetching Course Assignments & Submissions...</p>
       </div>
     );
@@ -90,9 +90,9 @@ export default function AssignmentsView() {
       {/* Header Banner */}
       <div className="inst-card p-5 bg-white border border-[#E2E8F0] rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
         <div>
-          <div className="flex items-center space-x-2 text-[#174A7E] mb-1">
+          <div className="flex items-center space-x-2 text-[#22223B] mb-1">
             <FileText className="w-5 h-5" />
-            <span className="text-xs font-bold uppercase bg-[#EAF2F8] px-2 py-0.5 rounded">Course Deliverables</span>
+            <span className="text-xs font-bold uppercase bg-[#EDF2FB] px-2 py-0.5 rounded">Course Deliverables</span>
           </div>
           <h1 className="text-xl font-bold text-slate-900">Assignments & Project Submissions</h1>
           <p className="text-xs text-slate-600">Submit code repositories, view evaluations, and track trainer feedback</p>
@@ -129,11 +129,11 @@ export default function AssignmentsView() {
           const isSubmitted = sub && sub.status === 'submitted';
 
           return (
-            <div key={assignment.id} className="inst-card p-5 bg-white border border-[#E2E8F0] rounded-xl space-y-4 shadow-xs hover:border-[#174A7E] transition-all">
+            <div key={assignment.id} className="inst-card p-5 bg-white border border-[#E2E8F0] rounded-xl space-y-4 shadow-xs hover:border-[#22223B] transition-all">
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div className="space-y-1">
-                  <span className="text-[10px] font-bold text-[#174A7E] bg-[#EAF2F8] px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-bold text-[#22223B] bg-[#EDF2FB] px-2 py-0.5 rounded">
                     {assignment.module_name || 'Core Module'}
                   </span>
                   <h3 className="text-base font-bold text-slate-900">{assignment.title}</h3>
@@ -141,7 +141,7 @@ export default function AssignmentsView() {
 
                 <div className="flex items-center space-x-3 text-xs">
                   <span className="text-slate-500 font-medium">Due: <span className="font-bold text-slate-800">{assignment.due_date}</span></span>
-                  <span className="font-bold text-[#174A7E] bg-blue-50 px-2.5 py-1 rounded border border-blue-200">
+                  <span className="font-bold text-[#22223B] bg-blue-50 px-2.5 py-1 rounded border border-blue-200">
                     Max: {assignment.max_score} pts
                   </span>
                 </div>
@@ -167,7 +167,7 @@ export default function AssignmentsView() {
                         href={sub.content_url}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[#174A7E] hover:underline font-mono flex items-center space-x-1"
+                        className="text-[#22223B] hover:underline font-mono flex items-center space-x-1"
                       >
                         <span>{sub.content_url}</span>
                         <ExternalLink className="w-3 h-3" />
@@ -175,7 +175,7 @@ export default function AssignmentsView() {
                     </div>
 
                     {isGraded && (
-                      <div className="flex items-center space-x-1 text-sm font-bold text-[#174A7E]">
+                      <div className="flex items-center space-x-1 text-sm font-bold text-[#22223B]">
                         <Award className="w-4 h-4" />
                         <span>Score: {sub.grade} / {assignment.max_score}</span>
                       </div>
@@ -190,7 +190,7 @@ export default function AssignmentsView() {
                   )}
                 </div>
               ) : (
-                <div className="p-4 bg-[#F0F7FF] rounded-lg border border-blue-200 space-y-3">
+                <div className="p-4 bg-[#EDF2FB] rounded-lg border border-blue-200 space-y-3">
                   <p className="text-xs font-bold text-slate-800">Submit Your Project Solution:</p>
                   <div className="flex flex-col sm:flex-row gap-2">
                     <input
@@ -198,12 +198,12 @@ export default function AssignmentsView() {
                       value={solutionUrl}
                       onChange={(e) => setSolutionUrl(e.target.value)}
                       placeholder="Paste GitHub repository or solution URL (https://github.com/...)"
-                      className="flex-1 p-2.5 border border-slate-300 rounded-lg text-xs font-mono focus:outline-none focus:ring-1 focus:ring-[#174A7E] bg-white"
+                      className="flex-1 p-2.5 border border-slate-300 rounded-lg text-xs font-mono focus:outline-none focus:ring-1 focus:ring-[#22223B] bg-white"
                     />
                     <button
                       onClick={() => handleSubmit(assignment.id)}
                       disabled={submittingId === assignment.id || !solutionUrl.trim()}
-                      className="px-4 py-2.5 bg-[#174A7E] hover:bg-[#12395F] text-white font-semibold text-xs rounded-lg transition-colors flex items-center justify-center space-x-1.5 disabled:opacity-50"
+                      className="px-4 py-2.5 bg-[#ABC4FF] hover:bg-[#B6CCFE] text-[#22223B] font-semibold text-xs rounded-lg transition-colors flex items-center justify-center space-x-1.5 disabled:opacity-50"
                     >
                       <Send className="w-3.5 h-3.5" />
                       <span>{submittingId === assignment.id ? 'Submitting...' : 'Submit Work'}</span>
