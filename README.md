@@ -31,9 +31,18 @@ npm install
 ```
 
 ## 💻 Usage
-
+Frontend:-
 ```bash
-npm start
+cd frontend
+npm install
+npm run dev
+```
+Backend:-
+```bash
+cd backend
+pip install -r requirements.txt
+python seed.py
+python -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
 ## ✨ Features
@@ -64,4 +73,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-<div align="center">Made with ❤️ by Soumashree-Das</div>
+<div align="center">Made with ❤️ by Team Criminally Online</div>
